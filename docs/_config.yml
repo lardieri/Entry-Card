@@ -1,0 +1,16 @@
+theme: jekyll-theme-slate
+
+title: Entry Card
+description: Go out. Get in. Faster!
+
+show_downloads: false
+google_analytics: false
+
+optional_front_matter:
+  remove_originals: true
+
+readme_index:
+  remove_originals: true
+
+titles_from_headings:
+  strip_title: true
