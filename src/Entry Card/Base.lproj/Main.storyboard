@@ -46,8 +46,23 @@
             </objects>
             <point key="canvasLocation" x="935" y="263"/>
         </scene>
+        <!--Empty Picture-->
+        <scene sceneID="r4v-RF-qYR">
+            <objects>
+                <viewController storyboardIdentifier="Empty Picture View Controller" id="yNp-iP-oIz" userLabel="Empty Picture" sceneMemberID="viewController">
+                    <imageView key="view" opaque="NO" contentMode="center" image="Empty Picture" id="X71-7w-lUE">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Fe2-Tw-Jog"/>
+                    </imageView>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E7t-Vg-Xrx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="935" y="926"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Empty Picture" width="100" height="100"/>
         <systemColor name="systemGray3Color">
             <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

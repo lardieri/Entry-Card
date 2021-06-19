@@ -25,11 +25,11 @@ class MainViewController: UIViewController {
             pageVC.delegate = self
             pageVC.setViewControllers([pages[0]], direction: .forward, animated: false, completion: nil)
         } else {
-            let blankVC = UIViewController()
+            let emptyVC = storyboard!.instantiateViewController(withIdentifier: Storyboard.emptyPictureViewController)
 
             pageVC.dataSource = nil
             pageVC.delegate = nil
-            pageVC.setViewControllers([blankVC], direction: .forward, animated: false, completion: nil)
+            pageVC.setViewControllers([emptyVC], direction: .forward, animated: false, completion: nil)
         }
     }
 
