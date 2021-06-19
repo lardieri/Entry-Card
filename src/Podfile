@@ -1,0 +1,6 @@
+platform :ios, '12.3'
+
+target 'Entry Card' do
+  use_frameworks!
+
+end

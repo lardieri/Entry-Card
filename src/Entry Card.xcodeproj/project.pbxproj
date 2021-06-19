@@ -12,9 +12,12 @@
 		DFDD516D267D97A60037CD5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFDD516B267D97A60037CD5E /* Main.storyboard */; };
 		DFDD516F267D97A80037CD5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFDD516E267D97A80037CD5E /* Assets.xcassets */; };
 		DFDD5172267D97A80037CD5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFDD5170267D97A80037CD5E /* LaunchScreen.storyboard */; };
+		E26117985BEDC1A1C3681C39 /* Pods_Entry_Card.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3873AB63810DF2464546F94B /* Pods_Entry_Card.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18C20FFE59950DDCA0E53356 /* Pods-Entry Card.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Entry Card.release.xcconfig"; path = "Target Support Files/Pods-Entry Card/Pods-Entry Card.release.xcconfig"; sourceTree = "<group>"; };
+		3873AB63810DF2464546F94B /* Pods_Entry_Card.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Entry_Card.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFDD5162267D97A60037CD5E /* Entry Card.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Entry Card.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFDD5165267D97A60037CD5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFDD5169267D97A60037CD5E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		DFDD516E267D97A80037CD5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFDD5171267D97A80037CD5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFDD5173267D97A80037CD5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E235C861D42A074CA048F18A /* Pods-Entry Card.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Entry Card.debug.xcconfig"; path = "Target Support Files/Pods-Entry Card/Pods-Entry Card.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E26117985BEDC1A1C3681C39 /* Pods_Entry_Card.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4798F40314AE8ED9326AB3FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3873AB63810DF2464546F94B /* Pods_Entry_Card.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DFDD5159267D97A60037CD5E = {
 			isa = PBXGroup;
 			children = (
 				DFDD5164267D97A60037CD5E /* Entry Card */,
 				DFDD5163267D97A60037CD5E /* Products */,
+				F6BA9AA0FA2303EB9C015393 /* Pods */,
+				4798F40314AE8ED9326AB3FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +79,16 @@
 			path = "Entry Card";
 			sourceTree = "<group>";
 		};
+		F6BA9AA0FA2303EB9C015393 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E235C861D42A074CA048F18A /* Pods-Entry Card.debug.xcconfig */,
+				18C20FFE59950DDCA0E53356 /* Pods-Entry Card.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,6 +96,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DFDD5176267D97A80037CD5E /* Build configuration list for PBXNativeTarget "Entry Card" */;
 			buildPhases = (
+				4E9A965F1A8F1FC021FA3DC4 /* [CP] Check Pods Manifest.lock */,
 				DFDD515E267D97A60037CD5E /* Sources */,
 				DFDD515F267D97A60037CD5E /* Frameworks */,
 				DFDD5160267D97A60037CD5E /* Resources */,
@@ -128,6 +154,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4E9A965F1A8F1FC021FA3DC4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Entry Card-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DFDD515E267D97A60037CD5E /* Sources */ = {
@@ -279,6 +330,7 @@
 		};
 		DFDD5177267D97A80037CD5E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E235C861D42A074CA048F18A /* Pods-Entry Card.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -298,6 +350,7 @@
 		};
 		DFDD5178267D97A80037CD5E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18C20FFE59950DDCA0E53356 /* Pods-Entry Card.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
