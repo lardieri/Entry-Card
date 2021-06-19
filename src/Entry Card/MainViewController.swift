@@ -24,6 +24,12 @@ class MainViewController: UIViewController {
             pageVC.dataSource = self
             pageVC.delegate = self
             pageVC.setViewControllers([pages[0]], direction: .forward, animated: false, completion: nil)
+
+            OperationQueue.main.addOperation {
+                if let pageControl = pageVC.view.subviews.first(where: { $0 is UIPageControl }) as? UIPageControl {
+                    self.customizePageControl(pageControl)
+                }
+            }
         } else {
             let emptyVC = storyboard!.instantiateViewController(withIdentifier: Storyboard.emptyPictureViewController)
 
@@ -31,6 +37,14 @@ class MainViewController: UIViewController {
             pageVC.delegate = nil
             pageVC.setViewControllers([emptyVC], direction: .forward, animated: false, completion: nil)
         }
+    }
+
+    private func customizePageControl(_ pageControl: UIPageControl) {
+        if #available(iOS 14.0, *) {
+            pageControl.backgroundStyle = .prominent
+        }
+        
+        pageControl.hidesForSinglePage = true
     }
 
     private var pageVC: UIPageViewController? {
