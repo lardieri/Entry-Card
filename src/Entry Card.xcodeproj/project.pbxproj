@@ -12,6 +12,7 @@
 		DFDD516D267D97A60037CD5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFDD516B267D97A60037CD5E /* Main.storyboard */; };
 		DFDD516F267D97A80037CD5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFDD516E267D97A80037CD5E /* Assets.xcassets */; };
 		DFDD5172267D97A80037CD5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFDD5170267D97A80037CD5E /* LaunchScreen.storyboard */; };
+		DFDD517A267DC4F30037CD5E /* Storyboard identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDD5179267DC4F30037CD5E /* Storyboard identifiers.swift */; };
 		E26117985BEDC1A1C3681C39 /* Pods_Entry_Card.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3873AB63810DF2464546F94B /* Pods_Entry_Card.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		DFDD516E267D97A80037CD5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFDD5171267D97A80037CD5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFDD5173267D97A80037CD5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFDD5179267DC4F30037CD5E /* Storyboard identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard identifiers.swift"; sourceTree = "<group>"; };
 		E235C861D42A074CA048F18A /* Pods-Entry Card.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Entry Card.debug.xcconfig"; path = "Target Support Files/Pods-Entry Card/Pods-Entry Card.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,6 +73,7 @@
 			children = (
 				DFDD5165267D97A60037CD5E /* AppDelegate.swift */,
 				DFDD5169267D97A60037CD5E /* MainViewController.swift */,
+				DFDD5179267DC4F30037CD5E /* Storyboard identifiers.swift */,
 				DFDD516E267D97A80037CD5E /* Assets.xcassets */,
 				DFDD5170267D97A80037CD5E /* LaunchScreen.storyboard */,
 				DFDD516B267D97A60037CD5E /* Main.storyboard */,
@@ -85,7 +88,6 @@
 				E235C861D42A074CA048F18A /* Pods-Entry Card.debug.xcconfig */,
 				18C20FFE59950DDCA0E53356 /* Pods-Entry Card.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -186,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFDD516A267D97A60037CD5E /* MainViewController.swift in Sources */,
+				DFDD517A267DC4F30037CD5E /* Storyboard identifiers.swift in Sources */,
 				DFDD5166267D97A60037CD5E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
