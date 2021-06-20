@@ -542,6 +542,49 @@ https://spin.atomicobject.com/2017/07/18/swift-interface-builder</string>
             </objects>
             <point key="canvasLocation" x="935" y="926"/>
         </scene>
+        <!--Loaded Picture View Controller-->
+        <scene sceneID="Yjl-sd-R8v">
+            <objects>
+                <viewController storyboardIdentifier="Loaded Picture View Controller" title="Image" id="L3j-I9-ZBD" userLabel="Loaded Picture View Controller" customClass="LoadedPictureViewController" customModule="Entry_Card" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QeR-M3-nyu" customClass="LoadedPictureView" customModule="Entry_Card" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JhA-6L-GOS" userLabel="Scroll View">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="300" translatesAutoresizingMaskIntoConstraints="NO" id="FTe-Pz-zff" userLabel="Image View">
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="300"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="FTe-Pz-zff" firstAttribute="bottom" secondItem="c6W-jm-ZlT" secondAttribute="bottom" id="8MY-aw-b5N"/>
+                                    <constraint firstItem="FTe-Pz-zff" firstAttribute="leading" secondItem="c6W-jm-ZlT" secondAttribute="leading" id="9QZ-cH-zkW"/>
+                                    <constraint firstItem="FTe-Pz-zff" firstAttribute="top" secondItem="c6W-jm-ZlT" secondAttribute="top" id="XMf-pn-zOn"/>
+                                    <constraint firstItem="FTe-Pz-zff" firstAttribute="trailing" secondItem="c6W-jm-ZlT" secondAttribute="trailing" id="aA7-4t-hBl"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="c6W-jm-ZlT"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="a2o-HS-jl6"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="i27-m9-y41"/>
+                        <constraints>
+                            <constraint firstItem="JhA-6L-GOS" firstAttribute="top" secondItem="QeR-M3-nyu" secondAttribute="top" id="2D2-of-1FV"/>
+                            <constraint firstItem="JhA-6L-GOS" firstAttribute="leading" secondItem="QeR-M3-nyu" secondAttribute="leading" id="r57-zf-zTK"/>
+                            <constraint firstItem="JhA-6L-GOS" firstAttribute="bottom" secondItem="QeR-M3-nyu" secondAttribute="bottom" id="vLY-gZ-qvd"/>
+                            <constraint firstItem="JhA-6L-GOS" firstAttribute="trailing" secondItem="QeR-M3-nyu" secondAttribute="trailing" id="xxO-WI-UcN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="FTe-Pz-zff" id="aHr-F3-b9g"/>
+                        <outlet property="scrollView" destination="JhA-6L-GOS" id="qM4-WD-8RZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bMx-90-I7k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1678" y="267"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="XSz-EO-yfS"/>

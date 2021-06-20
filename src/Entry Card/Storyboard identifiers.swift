@@ -11,5 +11,6 @@ enum Storyboard {
     static let emptyPictureViewController = "Empty Picture View Controller"
     static let presentSettingsSegue = "Present Settings segue"
     static let settingsDismissedSegue = "Settings Dismissed Segue"
+    static let loadedPictureViewController = "Loaded Picture View Controller"
 
 }
