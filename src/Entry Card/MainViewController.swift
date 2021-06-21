@@ -14,6 +14,14 @@ class MainViewController: UIViewController {
         settingsChangeObserver = AppSettings.observeChanges { [weak self] _ in
             self?.loadSettings()
         }
+
+        if pages.count == 0 {
+            self.needsInitialSettings = true
+        }
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        viewHasAppeared = true
     }
 
     @IBAction func presentedViewControllerDismissed(unwindSegue: UIStoryboardSegue) {
@@ -34,6 +42,17 @@ class MainViewController: UIViewController {
 
     private func loadSettings() {
 
+    }
+
+    private func showInitialSettingsIfNeeded() {
+        if needsInitialSettings && viewHasAppeared {
+            self.needsInitialSettings = false
+
+            OperationQueue.main.addOperation { [weak self] in
+                guard let self = self else { return }
+                self.performSegue(withIdentifier: Storyboard.presentSettingsSegue, sender: self)
+            }
+        }
     }
 
     private func updatePageViewController() {
@@ -79,6 +98,18 @@ class MainViewController: UIViewController {
     }
 
     private var settingsChangeObserver: Any?
+
+    private var needsInitialSettings = false {
+        didSet {
+            showInitialSettingsIfNeeded()
+        }
+    }
+
+    private var viewHasAppeared = false {
+        didSet {
+            showInitialSettingsIfNeeded()
+        }
+    }
 
 }
 
