@@ -176,12 +176,63 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="bGC-uk-r04" userLabel="Toolbar cell">
+                                        <rect key="frame" x="0.0" y="369.5" width="704" height="52"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bGC-uk-r04" id="1k0-zV-dEa">
+                                            <rect key="frame" x="0.0" y="0.0" width="704" height="52"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9PC-hB-0oj">
+                                                    <rect key="frame" x="0.0" y="0.0" width="704" height="52"/>
+                                                    <items>
+                                                        <barButtonItem style="plain" systemItem="flexibleSpace" id="wCa-DM-EC4"/>
+                                                        <barButtonItem systemItem="add" id="1MI-hd-Jha">
+                                                            <connections>
+                                                                <action selector="addImageTapped:" destination="a5X-e2-iJz" id="Ufm-mV-wm6"/>
+                                                            </connections>
+                                                        </barButtonItem>
+                                                        <barButtonItem style="plain" systemItem="flexibleSpace" id="wL3-Ud-Di7"/>
+                                                        <barButtonItem style="plain" systemItem="flexibleSpace" id="oN1-y4-uj4"/>
+                                                        <barButtonItem systemItem="add" id="0DD-Rz-3bl">
+                                                            <connections>
+                                                                <action selector="addImageTapped:" destination="a5X-e2-iJz" id="fgt-Zr-thp"/>
+                                                            </connections>
+                                                        </barButtonItem>
+                                                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Bcx-Rs-9JE"/>
+                                                        <barButtonItem style="plain" systemItem="flexibleSpace" id="oPF-a5-xzn"/>
+                                                        <barButtonItem systemItem="add" id="gj3-Tj-Th0">
+                                                            <connections>
+                                                                <action selector="addImageTapped:" destination="a5X-e2-iJz" id="kdr-gc-7jQ"/>
+                                                            </connections>
+                                                        </barButtonItem>
+                                                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Wtq-8t-C7T"/>
+                                                    </items>
+                                                    <color key="barTintColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                                </toolbar>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="9PC-hB-0oj" secondAttribute="trailing" symbolic="YES" id="Pex-EF-Xx4"/>
+                                                <constraint firstAttribute="bottom" secondItem="9PC-hB-0oj" secondAttribute="bottom" symbolic="YES" id="Znw-iT-Xfv"/>
+                                                <constraint firstItem="9PC-hB-0oj" firstAttribute="leading" secondItem="1k0-zV-dEa" secondAttribute="leading" symbolic="YES" id="f1U-xY-3OG"/>
+                                                <constraint firstItem="9PC-hB-0oj" firstAttribute="top" secondItem="1k0-zV-dEa" secondAttribute="top" symbolic="YES" id="jke-W4-T7U"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="12" id="bhH-MH-KRN" userLabel="empty cell">
+                                        <rect key="frame" x="0.0" y="421.5" width="704" height="12"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bhH-MH-KRN" id="D8i-gZ-DBW">
+                                            <rect key="frame" x="0.0" y="0.0" width="704" height="12"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Other Settings" id="Wyk-3t-vst" userLabel="Other settings">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationLevel="-1" indentationWidth="10" id="rWm-my-lNb" userLabel="Brightness cell">
-                                        <rect key="frame" x="0.0" y="419.5" width="704" height="80"/>
+                                        <rect key="frame" x="0.0" y="483.5" width="704" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rWm-my-lNb" id="cXH-n7-QVq">
                                             <rect key="frame" x="0.0" y="0.0" width="704" height="80"/>
@@ -218,7 +269,7 @@
                             <tableViewSection headerTitle="About" id="7ee-O8-HQx" userLabel="About">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Pzb-BC-xb0" userLabel="About Vax Card">
-                                        <rect key="frame" x="0.0" y="549.5" width="704" height="52"/>
+                                        <rect key="frame" x="0.0" y="613.5" width="704" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pzb-BC-xb0" id="nPU-q3-GG4">
                                             <rect key="frame" x="0.0" y="0.0" width="704" height="52"/>
@@ -269,7 +320,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="wLO-2R-TUQ" userLabel="&quot;third-party libraries&quot;">
-                                        <rect key="frame" x="0.0" y="601.5" width="704" height="52"/>
+                                        <rect key="frame" x="0.0" y="665.5" width="704" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wLO-2R-TUQ" id="euY-zQ-Zla">
                                             <rect key="frame" x="0.0" y="0.0" width="704" height="52"/>
@@ -291,7 +342,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="10" id="RLr-Kt-xgl" userLabel="License: BrightnessToggle">
-                                        <rect key="frame" x="0.0" y="653.5" width="704" height="52"/>
+                                        <rect key="frame" x="0.0" y="717.5" width="704" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RLr-Kt-xgl" id="tXQ-rR-feZ">
                                             <rect key="frame" x="0.0" y="0.0" width="704" height="52"/>
@@ -344,7 +395,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="2" indentationWidth="10" id="z9x-au-qtZ" userLabel="License: UIView borders">
-                                        <rect key="frame" x="0.0" y="705.5" width="704" height="52"/>
+                                        <rect key="frame" x="0.0" y="769.5" width="704" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z9x-au-qtZ" id="qwf-ld-cRY">
                                             <rect key="frame" x="0.0" y="0.0" width="704" height="52"/>
@@ -401,6 +452,23 @@ https://spin.atomicobject.com/2017/07/18/swift-interface-builder</string>
                             <outlet property="delegate" destination="a5X-e2-iJz" id="lEF-1j-rJ1"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem systemItem="trash" id="qrQ-uf-QH2">
+                            <connections>
+                                <action selector="removeImageTapped:" destination="a5X-e2-iJz" id="JxH-2Q-1Gy"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem systemItem="trash" id="WzX-LI-0QC">
+                            <connections>
+                                <action selector="removeImageTapped:" destination="a5X-e2-iJz" id="2Gu-Yj-e15"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem systemItem="trash" id="b3X-7n-TbQ">
+                            <connections>
+                                <action selector="removeImageTapped:" destination="a5X-e2-iJz" id="Pm2-MC-IYS"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Settings" id="lOG-VV-50C">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="wTd-nr-pq0">
                             <connections>
@@ -408,11 +476,19 @@ https://spin.atomicobject.com/2017/07/18/swift-interface-builder</string>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="brightnessSwitch" destination="rr1-3Q-wjh" id="pXB-Fl-ZPI"/>
+                        <outlet property="toolbar" destination="9PC-hB-0oj" id="jgW-sW-Lf3"/>
                         <outletCollection property="imageViews" destination="iYz-Fp-D69" collectionClass="NSMutableArray" id="YRX-qt-Ew4"/>
                         <outletCollection property="imageViews" destination="4oq-Nb-zhJ" collectionClass="NSMutableArray" id="hg8-gS-Nqa"/>
                         <outletCollection property="imageViews" destination="RLc-v1-TDT" collectionClass="NSMutableArray" id="Efj-aO-ssa"/>
+                        <outletCollection property="addImageButtons" destination="1MI-hd-Jha" collectionClass="NSMutableArray" id="Sjt-dH-lQg"/>
+                        <outletCollection property="addImageButtons" destination="0DD-Rz-3bl" collectionClass="NSMutableArray" id="R8U-hR-2zn"/>
+                        <outletCollection property="addImageButtons" destination="gj3-Tj-Th0" collectionClass="NSMutableArray" id="Clo-uj-6XG"/>
+                        <outletCollection property="removeImageButtons" destination="qrQ-uf-QH2" collectionClass="NSMutableArray" id="8a9-3o-cim"/>
+                        <outletCollection property="removeImageButtons" destination="WzX-LI-0QC" collectionClass="NSMutableArray" id="jh0-iB-wbN"/>
+                        <outletCollection property="removeImageButtons" destination="b3X-7n-TbQ" collectionClass="NSMutableArray" id="ohz-d7-nkH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ZF-EN-9uy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -479,6 +555,9 @@ https://spin.atomicobject.com/2017/07/18/swift-interface-builder</string>
         <namedColor name="TableView Border Color">
             <color white="0.0" alpha="0.30000001192092896" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </namedColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="separatorColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -7,9 +7,12 @@ import UIKit
 
 class SettingsViewController: UITableViewController {
 
+    @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var brightnessSwitch: UISwitch!
 
     @IBOutlet var imageViews: [UIImageView]!
+    @IBOutlet var addImageButtons: [UIBarButtonItem]!
+    @IBOutlet var removeImageButtons: [UIBarButtonItem]!
 
     private let borderViewTag = 314159
     private let borderColor = UIColor(named: Colors.tableViewBorder)
@@ -37,6 +40,14 @@ class SettingsViewController: UITableViewController {
             borderView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             borderView.heightAnchor.constraint(equalToConstant: borderThickness),
         ])
+    }
+
+    @IBAction func addImageTapped(_ sender: UIBarButtonItem) {
+
+    }
+
+    @IBAction func removeImageTapped(_ sender: UIBarButtonItem) {
+
     }
 
     @IBAction func imageViewTapped(_ sender: UITapGestureRecognizer) {
