@@ -8,6 +8,7 @@ import Foundation
 enum Images {
 
     static let gearshape = "gearshape"
+    static let emptyPicture = "Empty Picture"
 
 }
 

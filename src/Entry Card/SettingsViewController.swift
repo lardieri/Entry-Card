@@ -43,15 +43,48 @@ class SettingsViewController: UITableViewController {
     }
 
     @IBAction func addImageTapped(_ sender: UIBarButtonItem) {
+        if let imageIndex = addImageButtons.firstIndex(of: sender),
+           var toolbarItems = toolbar.items,
+           let toolbarIndex = toolbarItems.firstIndex(of: sender) {
 
+            let imageView = imageViews[imageIndex]
+            chooseImage(forPosition: imageIndex) { [weak self, weak imageView] in
+                guard let self = self, let imageView = imageView else { return }
+
+                if imageView.image != Self.emptyPicture {
+                    toolbarItems[toolbarIndex] = self.removeImageButtons[imageIndex]
+                    self.toolbar.setItems(toolbarItems, animated: true)
+                }
+            }
+        }
     }
 
     @IBAction func removeImageTapped(_ sender: UIBarButtonItem) {
+        if let imageIndex = removeImageButtons.firstIndex(of: sender),
+           var toolbarItems = toolbar.items,
+           let toolbarIndex = toolbarItems.firstIndex(of: sender) {
+            imageViews[imageIndex].image = Self.emptyPicture
 
+            toolbarItems[toolbarIndex] = addImageButtons[imageIndex]
+            toolbar.setItems(toolbarItems, animated: true)
+        }
     }
 
     @IBAction func imageViewTapped(_ sender: UITapGestureRecognizer) {
+        if let imageView = sender.view as? UIImageView,
+           let imageIndex = imageViews.firstIndex(of: imageView),
+           var toolbarItems = toolbar.items,
+           let toolbarIndex = toolbarItems.firstIndex(of: addImageButtons[imageIndex]) {
 
+            chooseImage(forPosition: imageIndex) { [weak self, weak imageView] in
+                guard let self = self, let imageView = imageView else { return }
+
+                if imageView.image != Self.emptyPicture {
+                    toolbarItems[toolbarIndex] = self.removeImageButtons[imageIndex]
+                    self.toolbar.setItems(toolbarItems, animated: true)
+                }
+            }
+        }
     }
 
     @IBAction func brightnessChanged(_ sender: UISwitch, forEvent event: UIEvent) {
@@ -59,5 +92,11 @@ class SettingsViewController: UITableViewController {
             AppSettings.useMaximumBrightness = sender.isOn
         }
     }
+
+    private func chooseImage(forPosition index: Int, completion: @escaping () -> Void) {
+        completion()
+    }
+
+    private static let emptyPicture = UIImage(named: Images.emptyPicture)
 
 }
