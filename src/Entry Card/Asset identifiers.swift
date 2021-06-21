@@ -9,6 +9,8 @@ enum Images {
 
     static let gearshape = "gearshape"
     static let emptyPicture = "Empty Picture"
+    static let camera = "Camera"
+    static let photo = "Photo"
 
 }
 

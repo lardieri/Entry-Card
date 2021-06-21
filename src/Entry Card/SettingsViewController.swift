@@ -94,7 +94,47 @@ class SettingsViewController: UITableViewController {
     }
 
     private func chooseImage(forPosition index: Int, completion: @escaping () -> Void) {
-        completion()
+
+        func alertActionWithIcon(title: String, imageName: String, handler: ((UIAlertAction) -> Void)?) -> UIAlertAction {
+            let action = UIAlertAction(title: title, style: .default, handler: handler)
+
+            if let icon = UIImage(named: imageName) {
+                action.setValue(icon, forKey: "image")
+            }
+
+            return action
+        }
+
+        let alert = UIAlertController(title: "SELECT PICTURE", message: nil, preferredStyle: .actionSheet)
+
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            alert.addAction(alertActionWithIcon(title: "Camera", imageName: Images.camera, handler: { _ in
+                completion()
+            }))
+        }
+
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            alert.addAction(alertActionWithIcon(title: "Photos", imageName: Images.photo, handler: { _ in
+                completion()
+            }))
+        }
+
+        alert.addAction(
+            UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+                completion()
+            })
+        )
+
+        if let popPC = alert.popoverPresentationController {
+            let imageView = imageViews[index]
+            popPC.sourceView = imageView
+
+            let rect = imageView.bounds.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: imageView.bounds.height * 0.3, right: 0))
+            popPC.sourceRect = rect
+            popPC.permittedArrowDirections = .up
+        }
+
+        self.present(alert, animated: true, completion: nil)
     }
 
     private static let emptyPicture = UIImage(named: Images.emptyPicture)
