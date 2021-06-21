@@ -19,6 +19,8 @@ class MainViewController: UIViewController {
         if pages.count == 0 {
             self.needsInitialSettings = true
         }
+
+        StorageManager.cleanStorageDirectory()
     }
 
     override func viewDidAppear(_ animated: Bool) {
