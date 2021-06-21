@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import BrightnessToggle
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,6 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         AppSettings.establishDefaults()
         return true
+    }
+
+    func applicationWillResignActive(_ application: UIApplication) {
+        BrightnessToggle.applicationWillResignActive()
+    }
+
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        BrightnessToggle.applicationWillEnterForeground()
     }
 
 }
