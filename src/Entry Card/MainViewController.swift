@@ -45,6 +45,7 @@ class MainViewController: UIViewController {
 
     private func loadSettings() {
         updateBrightnessFromSettings()
+        updatePagesFromSettings()
     }
 
     private func updateBrightnessFromSettings() {
@@ -55,6 +56,24 @@ class MainViewController: UIViewController {
         } else {
             BrightnessToggle.restoreBrightness()
         }
+    }
+
+    private func updatePagesFromSettings() {
+        var pages = [LoadedPictureViewController]()
+
+        let loadedPictures = StorageManager.loadPictures().compactMap { $0 }
+
+        let existingFilenames = (self.pages as! [LoadedPictureViewController]).compactMap { $0.loadedPicture?.filename }
+        let newFilenames = loadedPictures.compactMap { $0.filename }
+        guard existingFilenames != newFilenames else { return }
+
+        for loadedPicture in loadedPictures {
+            let page = self.storyboard!.instantiateViewController(withIdentifier: Storyboard.loadedPictureViewController) as! LoadedPictureViewController
+            page.loadedPicture = loadedPicture
+            pages.append(page)
+        }
+
+        self.pages = pages
     }
 
     private func showInitialSettingsIfNeeded() {

@@ -14,6 +14,13 @@ class LoadedPictureViewController: UIViewController {
         super.viewDidLoad()
 
         scrollView!.delegate = self
+        imageView?.image = loadedPicture?.image
+    }
+
+    var loadedPicture: StorageManager.LoadedPicture? {
+        didSet {
+            imageView?.image = loadedPicture?.image
+        }
     }
 
 }
