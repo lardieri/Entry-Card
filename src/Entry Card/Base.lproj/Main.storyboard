@@ -153,9 +153,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Fe2-Tw-Jog"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="2ib-1I-XAk" appends="YES" id="ahV-kR-Wu8"/>
+                        </connections>
                     </imageView>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E7t-Vg-Xrx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="2ib-1I-XAk">
+                    <connections>
+                        <segue destination="XgN-5g-00r" kind="presentation" id="kV3-5Q-nnZ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="935" y="926"/>
         </scene>
