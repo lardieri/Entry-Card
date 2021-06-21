@@ -118,7 +118,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <sections/>
+                        <sections>
+                            <tableViewSection headerTitle="Select Pictures" id="ld6-4j-Xaz">
+                                <cells/>
+                            </tableViewSection>t
+                            <tableViewSection headerTitle="Other Settings" id="Wyk-3t-vst" userLabel="Other settings">
+                                <cells/>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="About" id="7ee-O8-HQx" userLabel="About">
+                                <cells/>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="a5X-e2-iJz" id="4I9-cF-oCb"/>
                             <outlet property="delegate" destination="a5X-e2-iJz" id="lEF-1j-rJ1"/>

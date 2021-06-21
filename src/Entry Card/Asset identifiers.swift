@@ -15,5 +15,6 @@ enum Images {
 enum Colors {
 
     static let settingsButton = "Settings Button Color"
+    static let tableViewBorder = "TableView Border Color"
 
 }
