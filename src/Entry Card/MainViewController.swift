@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import BrightnessToggle
 
 class MainViewController: UIViewController {
 
@@ -41,7 +42,17 @@ class MainViewController: UIViewController {
     }
 
     private func loadSettings() {
+        updateBrightnessFromSettings()
+    }
 
+    private func updateBrightnessFromSettings() {
+        guard AppSettings.useMaximumBrightness != BrightnessToggle.setToMax else { return }
+        
+        if AppSettings.useMaximumBrightness {
+            BrightnessToggle.maxBrightness()
+        } else {
+            BrightnessToggle.restoreBrightness()
+        }
     }
 
     private func showInitialSettingsIfNeeded() {

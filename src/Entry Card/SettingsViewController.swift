@@ -7,9 +7,17 @@ import UIKit
 
 class SettingsViewController: UITableViewController {
 
+    @IBOutlet weak var brightnessSwitch: UISwitch!
+
     private let borderViewTag = 314159
     private let borderColor = UIColor(named: Colors.tableViewBorder)
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        brightnessSwitch.setOn(AppSettings.useMaximumBrightness, animated: false)
+    }
+    
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard view.viewWithTag(borderViewTag) == nil else { return }
 
@@ -27,6 +35,12 @@ class SettingsViewController: UITableViewController {
             borderView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             borderView.heightAnchor.constraint(equalToConstant: borderThickness),
         ])
+    }
+
+    @IBAction func brightnessChanged(_ sender: UISwitch, forEvent event: UIEvent) {
+        if AppSettings.useMaximumBrightness != sender.isOn {
+            AppSettings.useMaximumBrightness = sender.isOn
+        }
     }
 
 }

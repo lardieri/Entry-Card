@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -123,12 +124,46 @@
                                 <cells/>
                             </tableViewSection>
                             <tableViewSection headerTitle="Other Settings" id="Wyk-3t-vst" userLabel="Other settings">
-                                <cells/>
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationLevel="-1" indentationWidth="10" id="rWm-my-lNb" userLabel="Brightness cell">
+                                        <rect key="frame" x="0.0" y="99.5" width="704" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rWm-my-lNb" id="cXH-n7-QVq">
+                                            <rect key="frame" x="0.0" y="0.0" width="704" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7JD-79-r7H">
+                                                    <rect key="frame" x="40" y="20" width="624" height="12"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maximum brightness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jq-rr-DYt" userLabel="Brightness label">
+                                                            <rect key="frame" x="0.0" y="0.0" width="567" height="12"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rr1-3Q-wjh" userLabel="Brightness switch">
+                                                            <rect key="frame" x="575" y="0.0" width="51" height="12"/>
+                                                            <connections>
+                                                                <action selector="brightnessChanged:forEvent:" destination="a5X-e2-iJz" eventType="valueChanged" id="dsj-05-6db"/>
+                                                            </connections>
+                                                        </switch>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="7JD-79-r7H" firstAttribute="trailing" secondItem="cXH-n7-QVq" secondAttribute="trailingMargin" constant="-20" id="CVj-pR-Dgz"/>
+                                                <constraint firstItem="7JD-79-r7H" firstAttribute="top" secondItem="cXH-n7-QVq" secondAttribute="top" constant="20" symbolic="YES" id="RVC-xU-dGq"/>
+                                                <constraint firstAttribute="bottom" secondItem="7JD-79-r7H" secondAttribute="bottom" constant="20" symbolic="YES" id="Twh-SI-JVY"/>
+                                                <constraint firstItem="7JD-79-r7H" firstAttribute="leading" secondItem="cXH-n7-QVq" secondAttribute="leadingMargin" constant="20" id="cVO-Bk-acn"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="About" id="7ee-O8-HQx" userLabel="About">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Pzb-BC-xb0" userLabel="About Vax Card">
-                                        <rect key="frame" x="0.0" y="149.5" width="704" height="52"/>
+                                        <rect key="frame" x="0.0" y="229.5" width="704" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pzb-BC-xb0" id="nPU-q3-GG4">
                                             <rect key="frame" x="0.0" y="0.0" width="704" height="52"/>
@@ -179,7 +214,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="wLO-2R-TUQ" userLabel="&quot;third-party libraries&quot;">
-                                        <rect key="frame" x="0.0" y="201.5" width="704" height="52"/>
+                                        <rect key="frame" x="0.0" y="281.5" width="704" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wLO-2R-TUQ" id="euY-zQ-Zla">
                                             <rect key="frame" x="0.0" y="0.0" width="704" height="52"/>
@@ -201,7 +236,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="10" id="RLr-Kt-xgl" userLabel="License: BrightnessToggle">
-                                        <rect key="frame" x="0.0" y="253.5" width="704" height="52"/>
+                                        <rect key="frame" x="0.0" y="333.5" width="704" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RLr-Kt-xgl" id="tXQ-rR-feZ">
                                             <rect key="frame" x="0.0" y="0.0" width="704" height="52"/>
@@ -254,7 +289,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="2" indentationWidth="10" id="z9x-au-qtZ" userLabel="License: UIView borders">
-                                        <rect key="frame" x="0.0" y="305.5" width="704" height="52"/>
+                                        <rect key="frame" x="0.0" y="385.5" width="704" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z9x-au-qtZ" id="qwf-ld-cRY">
                                             <rect key="frame" x="0.0" y="0.0" width="704" height="52"/>
@@ -318,6 +353,9 @@ https://spin.atomicobject.com/2017/07/18/swift-interface-builder</string>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="brightnessSwitch" destination="rr1-3Q-wjh" id="pXB-Fl-ZPI"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ZF-EN-9uy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="1aq-Gq-uyM" userLabel="Exit" sceneMemberID="exit"/>
