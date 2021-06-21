@@ -19,12 +19,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iBH-2u-CUx" userLabel="Page View">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1346"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                                 <connections>
                                     <segue destination="6Xa-yZ-P8b" kind="embed" identifier="Page View Controller embedded segue" id="yuu-oF-1cp"/>
                                 </connections>
                             </containerView>
-                            <visualEffectView opaque="NO" clipsSubviews="YES" alpha="0.6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4gg-d0-g0Z">
+                            <visualEffectView opaque="NO" clipsSubviews="YES" alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4gg-d0-g0Z">
                                 <rect key="frame" x="966" y="8" width="50" height="50"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fYg-A9-Q1h">
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -98,7 +98,7 @@
                 <navigationController title="Settings Nav" automaticallyAdjustsScrollViewInsets="NO" id="XgN-5g-00r" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="f9P-Bp-O7P">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="704" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -115,18 +115,142 @@
             <objects>
                 <tableViewController title="Settings" id="a5X-e2-iJz" customClass="SettingsViewController" customModule="Entry_Card" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="UiT-jA-Pzx">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="704" height="995.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
                             <tableViewSection headerTitle="Select Pictures" id="ld6-4j-Xaz">
                                 <cells/>
-                            </tableViewSection>t
+                            </tableViewSection>
                             <tableViewSection headerTitle="Other Settings" id="Wyk-3t-vst" userLabel="Other settings">
                                 <cells/>
                             </tableViewSection>
                             <tableViewSection headerTitle="About" id="7ee-O8-HQx" userLabel="About">
-                                <cells/>
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Pzb-BC-xb0" userLabel="About Vax Card">
+                                        <rect key="frame" x="0.0" y="149.5" width="704" height="52"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pzb-BC-xb0" id="nPU-q3-GG4">
+                                            <rect key="frame" x="0.0" y="0.0" width="704" height="52"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xr1-s5-cOa">
+                                                    <rect key="frame" x="20" y="20" width="984" height="12"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment>
+                                                            <string key="content">Entry Card
+</string>
+                                                            <attributes>
+                                                                <font key="NSFont" metaFont="system" size="22.5"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                            <attributes>
+                                                                <font key="NSFont" metaFont="system" size="5.5"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content"> Release 1.0
+</string>
+                                                            <attributes>
+                                                                <font key="NSFont" metaFont="system" size="12.5"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">
+© 2021 Stephen Lardieri</string>
+                                                            <attributes>
+                                                                <font key="NSFont" metaFont="system" size="14.5"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="xr1-s5-cOa" firstAttribute="top" secondItem="nPU-q3-GG4" secondAttribute="top" constant="20" symbolic="YES" id="3IC-JJ-ldQ"/>
+                                                <constraint firstItem="xr1-s5-cOa" firstAttribute="leading" secondItem="nPU-q3-GG4" secondAttribute="leading" constant="20" symbolic="YES" id="6uo-Ub-pdU"/>
+                                                <constraint firstAttribute="trailing" secondItem="xr1-s5-cOa" secondAttribute="trailing" constant="20" symbolic="YES" id="H6q-kp-I7i"/>
+                                                <constraint firstAttribute="bottom" secondItem="xr1-s5-cOa" secondAttribute="bottom" constant="20" symbolic="YES" id="Ngl-aT-XtD"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="wLO-2R-TUQ" userLabel="&quot;third-party libraries&quot;">
+                                        <rect key="frame" x="0.0" y="201.5" width="704" height="52"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wLO-2R-TUQ" id="euY-zQ-Zla">
+                                            <rect key="frame" x="0.0" y="0.0" width="704" height="52"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This application makes use of the following third party libraries:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FAF-M4-xjO">
+                                                    <rect key="frame" x="20" y="20" width="984" height="12"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="FAF-M4-xjO" firstAttribute="leading" secondItem="euY-zQ-Zla" secondAttribute="leading" constant="20" symbolic="YES" id="ARE-4e-xc2"/>
+                                                <constraint firstItem="FAF-M4-xjO" firstAttribute="top" secondItem="euY-zQ-Zla" secondAttribute="top" constant="20" symbolic="YES" id="nZq-DH-BMy"/>
+                                                <constraint firstAttribute="bottom" secondItem="FAF-M4-xjO" secondAttribute="bottom" constant="20" symbolic="YES" id="s30-ea-PeN"/>
+                                                <constraint firstAttribute="trailing" secondItem="FAF-M4-xjO" secondAttribute="trailing" constant="20" symbolic="YES" id="zlU-kC-L01"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="2" indentationWidth="10" id="z9x-au-qtZ" userLabel="License: UIView borders">
+                                        <rect key="frame" x="0.0" y="253.5" width="704" height="52"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z9x-au-qtZ" id="qwf-ld-cRY">
+                                            <rect key="frame" x="0.0" y="0.0" width="704" height="52"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U4U-Ks-4rk" userLabel="Border view">
+                                                    <rect key="frame" x="4" y="4" width="696" height="44"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNC-x3-gat" userLabel="License text">
+                                                            <rect key="frame" x="20" y="20" width="656" height="4"/>
+                                                            <string key="text">UIView @ IBInspectable Borders Extension
+by Mike Woelmer
+
+© 2017 Atomic Object LLC
+
+https://spin.atomicobject.com/2017/07/18/swift-interface-builder</string>
+                                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="sNC-x3-gat" firstAttribute="leading" secondItem="U4U-Ks-4rk" secondAttribute="leading" constant="20" symbolic="YES" id="P8s-YO-PEb"/>
+                                                        <constraint firstAttribute="bottom" secondItem="sNC-x3-gat" secondAttribute="bottom" constant="20" symbolic="YES" id="T5Y-Km-T6c"/>
+                                                        <constraint firstAttribute="trailing" secondItem="sNC-x3-gat" secondAttribute="trailing" constant="20" symbolic="YES" id="ZmH-do-BQG"/>
+                                                        <constraint firstItem="sNC-x3-gat" firstAttribute="top" secondItem="U4U-Ks-4rk" secondAttribute="top" constant="20" symbolic="YES" id="pnv-wQ-048"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="0.5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" name="TableView Border Color"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="U4U-Ks-4rk" firstAttribute="top" secondItem="qwf-ld-cRY" secondAttribute="top" constant="4" id="2Z1-97-ctB"/>
+                                                <constraint firstAttribute="trailing" secondItem="U4U-Ks-4rk" secondAttribute="trailing" constant="4" id="3DG-qv-bY8"/>
+                                                <constraint firstAttribute="bottom" secondItem="U4U-Ks-4rk" secondAttribute="bottom" constant="4" id="PkS-PX-JL4"/>
+                                                <constraint firstItem="U4U-Ks-4rk" firstAttribute="leading" secondItem="qwf-ld-cRY" secondAttribute="leading" constant="4" id="xOC-o8-xCm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
                             </tableViewSection>
                         </sections>
                         <connections>
@@ -179,11 +303,17 @@
             <point key="canvasLocation" x="935" y="926"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="XSz-EO-yfS"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Empty Picture" width="100" height="100"/>
         <image name="gearshape" width="25" height="25"/>
         <namedColor name="Settings Button Color">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+        <namedColor name="TableView Border Color">
+            <color white="0.0" alpha="0.30000001192092896" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </namedColor>
         <systemColor name="separatorColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
