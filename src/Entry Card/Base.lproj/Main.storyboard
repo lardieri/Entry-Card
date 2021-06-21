@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,6 +24,53 @@
                                     <segue destination="6Xa-yZ-P8b" kind="embed" identifier="Page View Controller embedded segue" id="yuu-oF-1cp"/>
                                 </connections>
                             </containerView>
+                            <visualEffectView opaque="NO" clipsSubviews="YES" alpha="0.6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4gg-d0-g0Z">
+                                <rect key="frame" x="966" y="8" width="50" height="50"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fYg-A9-Q1h">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Nq-VT-YCs">
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="eYU-SL-ILd">
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="regular"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="prominent"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="separatorColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </visualEffectView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rtt-o9-goL" userLabel="Settings Button">
+                                <rect key="frame" x="966" y="8" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Nsr-ki-Bab"/>
+                                    <constraint firstAttribute="width" constant="50" id="icL-wF-XXL"/>
+                                </constraints>
+                                <color key="tintColor" name="Settings Button Color"/>
+                                <state key="normal" image="gearshape"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="XgN-5g-00r" kind="presentation" identifier="Present Settings segue" id="XSz-EO-yfS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray3Color"/>
@@ -31,6 +79,12 @@
                             <constraint firstItem="iBH-2u-CUx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9KZ-wW-uQP"/>
                             <constraint firstItem="iBH-2u-CUx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="GvD-YH-as1"/>
                             <constraint firstItem="iBH-2u-CUx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fBV-xM-9UU"/>
+                            <constraint firstItem="Rtt-o9-goL" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-8" id="gtx-I5-gpI"/>
+                            <constraint firstItem="Rtt-o9-goL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="hfT-ze-EMv"/>
+                            <constraint firstItem="4gg-d0-g0Z" firstAttribute="centerX" secondItem="Rtt-o9-goL" secondAttribute="centerX" id="ipg-ml-RuF"/>
+                            <constraint firstItem="4gg-d0-g0Z" firstAttribute="centerY" secondItem="Rtt-o9-goL" secondAttribute="centerY" id="jy6-q4-jLc"/>
+                            <constraint firstItem="4gg-d0-g0Z" firstAttribute="width" secondItem="Rtt-o9-goL" secondAttribute="width" id="keP-NN-njy"/>
+                            <constraint firstItem="4gg-d0-g0Z" firstAttribute="height" secondItem="Rtt-o9-goL" secondAttribute="height" id="l92-9V-hn4"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -108,6 +162,13 @@
     </scenes>
     <resources>
         <image name="Empty Picture" width="100" height="100"/>
+        <image name="gearshape" width="25" height="25"/>
+        <namedColor name="Settings Button Color">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

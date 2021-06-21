@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DFA4E5A92680971D00095F77 /* Asset identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA4E5A82680971D00095F77 /* Asset identifiers.swift */; };
 		DFB8F9BE26807AB800D2AAFD /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB8F9BD26807AB800D2AAFD /* AppSettings.swift */; };
-		DFB8F9C226808FB200D2AAFD /* UIView borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB8F9C126808FB200D2AAFD /* UIView borders.swift */; };
 		DFB8F9C02680841700D2AAFD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB8F9BF2680841700D2AAFD /* SettingsViewController.swift */; };
+		DFB8F9C226808FB200D2AAFD /* UIView borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB8F9C126808FB200D2AAFD /* UIView borders.swift */; };
 		DFDD5166267D97A60037CD5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDD5165267D97A60037CD5E /* AppDelegate.swift */; };
 		DFDD516A267D97A60037CD5E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDD5169267D97A60037CD5E /* MainViewController.swift */; };
 		DFDD516D267D97A60037CD5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFDD516B267D97A60037CD5E /* Main.storyboard */; };
@@ -22,9 +23,10 @@
 /* Begin PBXFileReference section */
 		18C20FFE59950DDCA0E53356 /* Pods-Entry Card.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Entry Card.release.xcconfig"; path = "Target Support Files/Pods-Entry Card/Pods-Entry Card.release.xcconfig"; sourceTree = "<group>"; };
 		3873AB63810DF2464546F94B /* Pods_Entry_Card.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Entry_Card.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFA4E5A82680971D00095F77 /* Asset identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Asset identifiers.swift"; sourceTree = "<group>"; };
 		DFB8F9BD26807AB800D2AAFD /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
-		DFB8F9C126808FB200D2AAFD /* UIView borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView borders.swift"; sourceTree = "<group>"; };
 		DFB8F9BF2680841700D2AAFD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		DFB8F9C126808FB200D2AAFD /* UIView borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView borders.swift"; sourceTree = "<group>"; };
 		DFDD5162267D97A60037CD5E /* Entry Card.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Entry Card.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFDD5165267D97A60037CD5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFDD5169267D97A60037CD5E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			children = (
 				DFDD5165267D97A60037CD5E /* AppDelegate.swift */,
 				DFB8F9BD26807AB800D2AAFD /* AppSettings.swift */,
+				DFA4E5A82680971D00095F77 /* Asset identifiers.swift */,
 				DFDD5169267D97A60037CD5E /* MainViewController.swift */,
 				DFB8F9BF2680841700D2AAFD /* SettingsViewController.swift */,
 				DFDD5179267DC4F30037CD5E /* Storyboard identifiers.swift */,
@@ -201,6 +204,7 @@
 				DFB8F9BE26807AB800D2AAFD /* AppSettings.swift in Sources */,
 				DFDD5166267D97A60037CD5E /* AppDelegate.swift in Sources */,
 				DFB8F9C226808FB200D2AAFD /* UIView borders.swift in Sources */,
+				DFA4E5A92680971D00095F77 /* Asset identifiers.swift in Sources */,
 				DFB8F9C02680841700D2AAFD /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
