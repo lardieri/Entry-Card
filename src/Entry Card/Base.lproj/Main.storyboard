@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <device id="ipad12_9" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -38,6 +38,51 @@
             </objects>
             <point key="canvasLocation" x="132" y="21"/>
         </scene>
+        <!--Settings Nav-->
+        <scene sceneID="vss-iW-Wut">
+            <objects>
+                <navigationController title="Settings Nav" automaticallyAdjustsScrollViewInsets="NO" id="XgN-5g-00r" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="f9P-Bp-O7P">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="a5X-e2-iJz" kind="relationship" relationship="rootViewController" id="KgG-dC-kd4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7LT-5F-hpg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="935" y="-410"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="l3o-Au-oxa">
+            <objects>
+                <tableViewController title="Settings" id="a5X-e2-iJz" customClass="SettingsViewController" customModule="Entry_Card" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="UiT-jA-Pzx">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="a5X-e2-iJz" id="4I9-cF-oCb"/>
+                            <outlet property="delegate" destination="a5X-e2-iJz" id="lEF-1j-rJ1"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="lOG-VV-50C">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="wTd-nr-pq0">
+                            <connections>
+                                <segue destination="1aq-Gq-uyM" kind="unwind" identifier="Settings Dismissed Segue" unwindAction="presentedViewControllerDismissedWithUnwindSegue:" id="TK0-Qn-5m3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ZF-EN-9uy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="1aq-Gq-uyM" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1723" y="-410"/>
+        </scene>
         <!--Page View Controller-->
         <scene sceneID="yYh-Gc-5dE">
             <objects>
@@ -63,6 +108,9 @@
     </scenes>
     <resources>
         <image name="Empty Picture" width="100" height="100"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray3Color">
             <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
