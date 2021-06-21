@@ -21,6 +21,25 @@ class SettingsViewController: UITableViewController {
         super.viewDidLoad()
 
         brightnessSwitch.setOn(AppSettings.useMaximumBrightness, animated: false)
+
+        var toolbarItems = toolbar.items
+        for (index, loadedPicture) in StorageManager.loadPictures().enumerated() {
+            guard index < imageViews.count else { break }
+
+            if let loadedPicture = loadedPicture {
+                imageViews[index].image = loadedPicture.image
+                if let buttonIndex = toolbarItems?.firstIndex(of: addImageButtons[index]) {
+                    toolbarItems?[buttonIndex] = removeImageButtons[index]
+                }
+            } else {
+                imageViews[index].image = Self.emptyPicture
+                if let buttonIndex = toolbarItems?.firstIndex(of: removeImageButtons[index]) {
+                    toolbarItems?[buttonIndex] = addImageButtons[index]
+                }
+            }
+        }
+
+        self.toolbar.setItems(toolbarItems, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -67,6 +86,8 @@ class SettingsViewController: UITableViewController {
 
             toolbarItems[toolbarIndex] = addImageButtons[imageIndex]
             toolbar.setItems(toolbarItems, animated: true)
+
+            StorageManager.removePicture(fromPosition: imageIndex)
         }
     }
 
@@ -113,6 +134,31 @@ class SettingsViewController: UITableViewController {
             }
 
             func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+                // Case 1: User edited the picture.
+                // The edited picture only exists in memory, and we need to save it.
+                if let editedImage = info[.editedImage] as? UIImage {
+                    if StorageManager.addPicture(fromImage: editedImage, atPosition: index) {
+                        imageView.image = editedImage
+                    }
+                }
+
+                // Case 2: User picked an original image from the photo library.
+                // We need to copy it in case it gets moved or deleted from the library later.
+                else if let imageURL = info[.imageURL] as? URL,
+                        let originalImage = info[.originalImage] as? UIImage {
+                    if StorageManager.addPicture(fromURL: imageURL, atPosition: index) {
+                        imageView.image = originalImage
+                    }
+                }
+
+                // Case 3: User took a new photo with the camera.
+                // The photo only exists in memory, and we need to save it.
+                else if let originalImage = info[.originalImage] as? UIImage {
+                    if StorageManager.addPicture(fromImage: originalImage, atPosition: index) {
+                        imageView.image = originalImage
+                    }
+                }
+
                 vc.dismiss(animated: true) {
                     self.completion()
                 }
