@@ -121,12 +121,67 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
                             <tableViewSection headerTitle="Select Pictures" id="ld6-4j-Xaz">
-                                <cells/>
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="0a1-5D-ZjJ" userLabel="Image Chooser cell">
+                                        <rect key="frame" x="0.0" y="49.5" width="704" height="320"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0a1-5D-ZjJ" id="tKx-Qq-RcA">
+                                            <rect key="frame" x="0.0" y="0.0" width="704" height="320"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="DqP-B0-ngE">
+                                                    <rect key="frame" x="20" y="20" width="664" height="288"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="120" placeholderIntrinsicHeight="90" image="Empty Picture" translatesAutoresizingMaskIntoConstraints="NO" id="iYz-Fp-D69">
+                                                            <rect key="frame" x="0.0" y="0.0" width="216" height="288"/>
+                                                            <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                            <gestureRecognizers/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="iYz-Fp-D69" secondAttribute="height" multiplier="3:4" id="0C5-Fd-DFj"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outletCollection property="gestureRecognizers" destination="DTS-SA-EuW" appends="YES" id="y1X-JV-jjN"/>
+                                                            </connections>
+                                                        </imageView>
+                                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="120" placeholderIntrinsicHeight="90" image="Empty Picture" translatesAutoresizingMaskIntoConstraints="NO" id="4oq-Nb-zhJ">
+                                                            <rect key="frame" x="224" y="0.0" width="216" height="288"/>
+                                                            <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                            <gestureRecognizers/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="4oq-Nb-zhJ" secondAttribute="height" multiplier="3:4" id="oET-ja-RoH"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outletCollection property="gestureRecognizers" destination="ShI-oq-nTY" appends="YES" id="gim-qH-bjq"/>
+                                                            </connections>
+                                                        </imageView>
+                                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="120" placeholderIntrinsicHeight="90" image="Empty Picture" translatesAutoresizingMaskIntoConstraints="NO" id="RLc-v1-TDT">
+                                                            <rect key="frame" x="448" y="0.0" width="216" height="288"/>
+                                                            <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                            <gestureRecognizers/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="RLc-v1-TDT" secondAttribute="height" multiplier="3:4" id="2gA-pS-Dxt"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outletCollection property="gestureRecognizers" destination="6wm-Rt-gbr" appends="YES" id="jUA-0O-sw0"/>
+                                                            </connections>
+                                                        </imageView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="DqP-B0-ngE" secondAttribute="bottom" priority="750" constant="20" symbolic="YES" id="3ip-YA-D4M"/>
+                                                <constraint firstItem="DqP-B0-ngE" firstAttribute="leading" secondItem="tKx-Qq-RcA" secondAttribute="leading" constant="20" symbolic="YES" id="8yl-qG-v5n"/>
+                                                <constraint firstAttribute="trailing" secondItem="DqP-B0-ngE" secondAttribute="trailing" constant="20" symbolic="YES" id="GAi-Ju-ed5"/>
+                                                <constraint firstItem="DqP-B0-ngE" firstAttribute="top" secondItem="tKx-Qq-RcA" secondAttribute="top" constant="20" symbolic="YES" id="Nvr-y8-iFP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Other Settings" id="Wyk-3t-vst" userLabel="Other settings">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationLevel="-1" indentationWidth="10" id="rWm-my-lNb" userLabel="Brightness cell">
-                                        <rect key="frame" x="0.0" y="99.5" width="704" height="80"/>
+                                        <rect key="frame" x="0.0" y="419.5" width="704" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rWm-my-lNb" id="cXH-n7-QVq">
                                             <rect key="frame" x="0.0" y="0.0" width="704" height="80"/>
@@ -163,7 +218,7 @@
                             <tableViewSection headerTitle="About" id="7ee-O8-HQx" userLabel="About">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Pzb-BC-xb0" userLabel="About Vax Card">
-                                        <rect key="frame" x="0.0" y="229.5" width="704" height="52"/>
+                                        <rect key="frame" x="0.0" y="549.5" width="704" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pzb-BC-xb0" id="nPU-q3-GG4">
                                             <rect key="frame" x="0.0" y="0.0" width="704" height="52"/>
@@ -214,7 +269,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="wLO-2R-TUQ" userLabel="&quot;third-party libraries&quot;">
-                                        <rect key="frame" x="0.0" y="281.5" width="704" height="52"/>
+                                        <rect key="frame" x="0.0" y="601.5" width="704" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wLO-2R-TUQ" id="euY-zQ-Zla">
                                             <rect key="frame" x="0.0" y="0.0" width="704" height="52"/>
@@ -236,7 +291,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="10" id="RLr-Kt-xgl" userLabel="License: BrightnessToggle">
-                                        <rect key="frame" x="0.0" y="333.5" width="704" height="52"/>
+                                        <rect key="frame" x="0.0" y="653.5" width="704" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RLr-Kt-xgl" id="tXQ-rR-feZ">
                                             <rect key="frame" x="0.0" y="0.0" width="704" height="52"/>
@@ -289,7 +344,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="2" indentationWidth="10" id="z9x-au-qtZ" userLabel="License: UIView borders">
-                                        <rect key="frame" x="0.0" y="385.5" width="704" height="52"/>
+                                        <rect key="frame" x="0.0" y="705.5" width="704" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z9x-au-qtZ" id="qwf-ld-cRY">
                                             <rect key="frame" x="0.0" y="0.0" width="704" height="52"/>
@@ -355,10 +410,28 @@ https://spin.atomicobject.com/2017/07/18/swift-interface-builder</string>
                     </navigationItem>
                     <connections>
                         <outlet property="brightnessSwitch" destination="rr1-3Q-wjh" id="pXB-Fl-ZPI"/>
+                        <outletCollection property="imageViews" destination="iYz-Fp-D69" collectionClass="NSMutableArray" id="YRX-qt-Ew4"/>
+                        <outletCollection property="imageViews" destination="4oq-Nb-zhJ" collectionClass="NSMutableArray" id="hg8-gS-Nqa"/>
+                        <outletCollection property="imageViews" destination="RLc-v1-TDT" collectionClass="NSMutableArray" id="Efj-aO-ssa"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ZF-EN-9uy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="1aq-Gq-uyM" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="DTS-SA-EuW">
+                    <connections>
+                        <action selector="imageViewTapped:" destination="a5X-e2-iJz" id="nab-lh-GlK"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="ShI-oq-nTY">
+                    <connections>
+                        <action selector="imageViewTapped:" destination="a5X-e2-iJz" id="PjI-Lj-cua"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="6wm-Rt-gbr">
+                    <connections>
+                        <action selector="imageViewTapped:" destination="a5X-e2-iJz" id="TnW-67-fgK"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1723" y="-410"/>
         </scene>
@@ -414,6 +487,9 @@ https://spin.atomicobject.com/2017/07/18/swift-interface-builder</string>
         </systemColor>
         <systemColor name="systemGray3Color">
             <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

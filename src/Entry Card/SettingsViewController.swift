@@ -9,6 +9,8 @@ class SettingsViewController: UITableViewController {
 
     @IBOutlet weak var brightnessSwitch: UISwitch!
 
+    @IBOutlet var imageViews: [UIImageView]!
+
     private let borderViewTag = 314159
     private let borderColor = UIColor(named: Colors.tableViewBorder)
 
@@ -35,6 +37,10 @@ class SettingsViewController: UITableViewController {
             borderView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             borderView.heightAnchor.constraint(equalToConstant: borderThickness),
         ])
+    }
+
+    @IBAction func imageViewTapped(_ sender: UITapGestureRecognizer) {
+
     }
 
     @IBAction func brightnessChanged(_ sender: UISwitch, forEvent event: UIEvent) {
