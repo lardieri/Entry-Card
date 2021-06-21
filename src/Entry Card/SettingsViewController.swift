@@ -95,6 +95,68 @@ class SettingsViewController: UITableViewController {
 
     private func chooseImage(forPosition index: Int, completion: @escaping () -> Void) {
 
+        class Delegate: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+            init(vc: SettingsViewController, imageView: UIImageView, index: Int, completion: @escaping () -> Void) {
+                self.vc = vc
+                self.imageView = imageView
+                self.index = index
+                self.completion = completion
+
+                super.init()
+            }
+
+            func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+                vc.dismiss(animated: true) {
+                    self.completion()
+                }
+            }
+
+            func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+                vc.dismiss(animated: true) {
+                    self.completion()
+                }
+            }
+
+            private let vc: SettingsViewController
+            private let imageView: UIImageView
+            private let index: Int
+            private let completion: () -> Void
+
+        }
+
+        func showImagePicker(for sourceType: UIImagePickerController.SourceType) {
+
+            class ImagePickerWithStrongDelegate: UIImagePickerController {
+
+                override weak var delegate: (UIImagePickerControllerDelegate & UINavigationControllerDelegate)? {
+                    didSet {
+                        strongDelegate = delegate
+                    }
+                }
+
+                private var strongDelegate: (UIImagePickerControllerDelegate & UINavigationControllerDelegate)?
+
+            }
+
+            let imagePicker = ImagePickerWithStrongDelegate()
+
+            imagePicker.sourceType = sourceType
+            imagePicker.allowsEditing = false // Built-in editing just crops to a square.
+
+            let imageView = imageViews[index]
+            let delegate = Delegate(vc: self, imageView: imageView, index: index, completion: completion)
+            imagePicker.delegate = delegate
+
+            if let popPC = imagePicker.popoverPresentationController {
+                popPC.sourceView = imageView
+                popPC.sourceRect = imageView.bounds
+                popPC.permittedArrowDirections = .any
+            }
+
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+
         func alertActionWithIcon(title: String, imageName: String, handler: ((UIAlertAction) -> Void)?) -> UIAlertAction {
             let action = UIAlertAction(title: title, style: .default, handler: handler)
 
@@ -109,13 +171,13 @@ class SettingsViewController: UITableViewController {
 
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             alert.addAction(alertActionWithIcon(title: "Camera", imageName: Images.camera, handler: { _ in
-                completion()
+                showImagePicker(for: .camera)
             }))
         }
 
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             alert.addAction(alertActionWithIcon(title: "Photos", imageName: Images.photo, handler: { _ in
-                completion()
+                showImagePicker(for: .photoLibrary)
             }))
         }
 
