@@ -9,12 +9,27 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        loadSettings()
+        settingsChangeObserver = AppSettings.observeChanges { [weak self] _ in
+            self?.loadSettings()
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == Storyboard.pageViewControllerEmbeddedSegue) {
             pageVC = (segue.destination as! UIPageViewController)
         }
+    }
+
+    deinit {
+        if let settingsChangeObserver = settingsChangeObserver {
+            AppSettings.stopObservingChanges(settingsChangeObserver)
+        }
+    }
+
+    private func loadSettings() {
+
     }
 
     private func updatePageViewController() {
@@ -58,6 +73,8 @@ class MainViewController: UIViewController {
             updatePageViewController()
         }
     }
+
+    private var settingsChangeObserver: Any?
 
 }
 
