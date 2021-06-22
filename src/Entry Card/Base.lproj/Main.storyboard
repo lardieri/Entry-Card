@@ -551,7 +551,7 @@ https://spin.atomicobject.com/2017/07/18/swift-interface-builder</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JhA-6L-GOS" userLabel="Scroll View">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1358"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="300" translatesAutoresizingMaskIntoConstraints="NO" id="FTe-Pz-zff" userLabel="Image View">
                                         <rect key="frame" x="0.0" y="0.0" width="400" height="300"/>
@@ -572,7 +572,7 @@ https://spin.atomicobject.com/2017/07/18/swift-interface-builder</string>
                         <constraints>
                             <constraint firstItem="JhA-6L-GOS" firstAttribute="top" secondItem="QeR-M3-nyu" secondAttribute="top" id="2D2-of-1FV"/>
                             <constraint firstItem="JhA-6L-GOS" firstAttribute="leading" secondItem="QeR-M3-nyu" secondAttribute="leading" id="r57-zf-zTK"/>
-                            <constraint firstItem="JhA-6L-GOS" firstAttribute="bottom" secondItem="QeR-M3-nyu" secondAttribute="bottom" id="vLY-gZ-qvd"/>
+                            <constraint firstItem="JhA-6L-GOS" firstAttribute="bottom" secondItem="QeR-M3-nyu" secondAttribute="bottom" constant="-8" id="vLY-gZ-qvd"/>
                             <constraint firstItem="JhA-6L-GOS" firstAttribute="trailing" secondItem="QeR-M3-nyu" secondAttribute="trailing" id="xxO-WI-UcN"/>
                         </constraints>
                     </view>
