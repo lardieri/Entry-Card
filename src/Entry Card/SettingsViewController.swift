@@ -10,9 +10,9 @@ class SettingsViewController: UITableViewController {
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var brightnessSwitch: UISwitch!
 
-    @IBOutlet var imageViews: [UIImageView]!
-    @IBOutlet var addImageButtons: [UIBarButtonItem]!
-    @IBOutlet var removeImageButtons: [UIBarButtonItem]!
+    @IBOutlet var imageViews: [UIImageView]! { didSet { imageViews.sort { $0.tag < $1.tag } } }
+    @IBOutlet var addImageButtons: [UIBarButtonItem]! { didSet { addImageButtons.sort { $0.tag < $1.tag } } }
+    @IBOutlet var removeImageButtons: [UIBarButtonItem]! { didSet { removeImageButtons.sort { $0.tag < $1.tag } } }
 
     private let borderViewTag = 314159
     private let borderColor = UIColor(named: Colors.tableViewBorder)
@@ -32,7 +32,7 @@ class SettingsViewController: UITableViewController {
                     toolbarItems?[buttonIndex] = removeImageButtons[index]
                 }
             } else {
-                imageViews[index].image = Self.emptyPicture
+                imageViews[index].image = nil
                 if let buttonIndex = toolbarItems?.firstIndex(of: removeImageButtons[index]) {
                     toolbarItems?[buttonIndex] = addImageButtons[index]
                 }
@@ -70,7 +70,7 @@ class SettingsViewController: UITableViewController {
             chooseImage(forPosition: imageIndex) { [weak self, weak imageView] in
                 guard let self = self, let imageView = imageView else { return }
 
-                if imageView.image != Self.emptyPicture {
+                if imageView.image != nil {
                     toolbarItems[toolbarIndex] = self.removeImageButtons[imageIndex]
                     self.toolbar.setItems(toolbarItems, animated: true)
                 }
@@ -82,7 +82,7 @@ class SettingsViewController: UITableViewController {
         if let imageIndex = removeImageButtons.firstIndex(of: sender),
            var toolbarItems = toolbar.items,
            let toolbarIndex = toolbarItems.firstIndex(of: sender) {
-            imageViews[imageIndex].image = Self.emptyPicture
+            imageViews[imageIndex].image = nil
 
             toolbarItems[toolbarIndex] = addImageButtons[imageIndex]
             toolbar.setItems(toolbarItems, animated: true)
@@ -100,7 +100,7 @@ class SettingsViewController: UITableViewController {
             chooseImage(forPosition: imageIndex) { [weak self, weak imageView] in
                 guard let self = self, let imageView = imageView else { return }
 
-                if imageView.image != Self.emptyPicture {
+                if imageView.image != nil {
                     toolbarItems[toolbarIndex] = self.removeImageButtons[imageIndex]
                     self.toolbar.setItems(toolbarItems, animated: true)
                 }
@@ -244,7 +244,5 @@ class SettingsViewController: UITableViewController {
 
         self.present(alert, animated: true, completion: nil)
     }
-
-    private static let emptyPicture = UIImage(named: Images.emptyPicture)
 
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DF38BF7C2680C249000ABC8F /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38BF7B2680C249000ABC8F /* StorageManager.swift */; };
+		DF49F32326830A4200B7090A /* ImageViewWithPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF49F32226830A4200B7090A /* ImageViewWithPlaceholder.swift */; };
 		DFA4E5A92680971D00095F77 /* Asset identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA4E5A82680971D00095F77 /* Asset identifiers.swift */; };
 		DFB8F9BA267F298D00D2AAFD /* LoadedPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB8F9B9267F298D00D2AAFD /* LoadedPictureView.swift */; };
 		DFB8F9BC267F29B100D2AAFD /* LoadedPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB8F9BB267F29B100D2AAFD /* LoadedPictureViewController.swift */; };
@@ -27,6 +28,7 @@
 		18C20FFE59950DDCA0E53356 /* Pods-Entry Card.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Entry Card.release.xcconfig"; path = "Target Support Files/Pods-Entry Card/Pods-Entry Card.release.xcconfig"; sourceTree = "<group>"; };
 		3873AB63810DF2464546F94B /* Pods_Entry_Card.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Entry_Card.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF38BF7B2680C249000ABC8F /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		DF49F32226830A4200B7090A /* ImageViewWithPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewWithPlaceholder.swift; sourceTree = "<group>"; };
 		DFA4E5A82680971D00095F77 /* Asset identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Asset identifiers.swift"; sourceTree = "<group>"; };
 		DFB8F9B9267F298D00D2AAFD /* LoadedPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadedPictureView.swift; sourceTree = "<group>"; };
 		DFB8F9BB267F29B100D2AAFD /* LoadedPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadedPictureViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				DFDD5165267D97A60037CD5E /* AppDelegate.swift */,
 				DFB8F9BD26807AB800D2AAFD /* AppSettings.swift */,
 				DFA4E5A82680971D00095F77 /* Asset identifiers.swift */,
+				DF49F32226830A4200B7090A /* ImageViewWithPlaceholder.swift */,
 				DFB8F9B9267F298D00D2AAFD /* LoadedPictureView.swift */,
 				DFB8F9BB267F29B100D2AAFD /* LoadedPictureViewController.swift */,
 				DFDD5169267D97A60037CD5E /* MainViewController.swift */,
@@ -235,6 +238,7 @@
 				DFB8F9C226808FB200D2AAFD /* UIView borders.swift in Sources */,
 				DFA4E5A92680971D00095F77 /* Asset identifiers.swift in Sources */,
 				DFB8F9C02680841700D2AAFD /* SettingsViewController.swift in Sources */,
+				DF49F32326830A4200B7090A /* ImageViewWithPlaceholder.swift in Sources */,
 				DF38BF7C2680C249000ABC8F /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
