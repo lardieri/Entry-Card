@@ -82,12 +82,17 @@ class SettingsViewController: UITableViewController {
         if let imageIndex = removeImageButtons.firstIndex(of: sender),
            var toolbarItems = toolbar.items,
            let toolbarIndex = toolbarItems.firstIndex(of: sender) {
-            imageViews[imageIndex].image = nil
 
-            toolbarItems[toolbarIndex] = addImageButtons[imageIndex]
-            toolbar.setItems(toolbarItems, animated: true)
+            confirmRemoveImage(forButton: sender) { [weak self] remove in
+                if remove, let self = self {
+                    self.imageViews[imageIndex].image = nil
 
-            StorageManager.removePicture(fromPosition: imageIndex)
+                    toolbarItems[toolbarIndex] = self.addImageButtons[imageIndex]
+                    self.toolbar.setItems(toolbarItems, animated: true)
+
+                    StorageManager.removePicture(fromPosition: imageIndex)
+                }
+            }
         }
     }
 
@@ -239,6 +244,21 @@ class SettingsViewController: UITableViewController {
 
             let rect = imageView.bounds.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: imageView.bounds.height * 0.3, right: 0))
             popPC.sourceRect = rect
+            popPC.permittedArrowDirections = .up
+        }
+
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    private func confirmRemoveImage(forButton removeButton: UIBarButtonItem, completion: @escaping (Bool) -> Void) {
+        let alert = UIAlertController(title: "Remove picture?", message: nil, preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:  { _ in completion(false) } ))
+
+        alert.addAction(UIAlertAction(title: "Remove", style: .destructive, handler: { _ in completion(true) } ))
+
+        if let popPC = alert.popoverPresentationController {
+            popPC.barButtonItem = removeButton
             popPC.permittedArrowDirections = .up
         }
 
