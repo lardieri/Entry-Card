@@ -13,6 +13,7 @@ class SettingsViewController: UITableViewController {
     @IBOutlet var imageViews: [UIImageView]! { didSet { imageViews.sort { $0.tag < $1.tag } } }
     @IBOutlet var addImageButtons: [UIBarButtonItem]! { didSet { addImageButtons.sort { $0.tag < $1.tag } } }
     @IBOutlet var removeImageButtons: [UIBarButtonItem]! { didSet { removeImageButtons.sort { $0.tag < $1.tag } } }
+    @IBOutlet var rotateImageButtons: [UIBarButtonItem]! { didSet { rotateImageButtons.sort { $0.tag < $1.tag } } }
 
     private let borderViewTag = 314159
     private let borderColor = UIColor(named: Colors.tableViewBorder)
@@ -22,24 +23,14 @@ class SettingsViewController: UITableViewController {
 
         brightnessSwitch.setOn(AppSettings.useMaximumBrightness, animated: false)
 
-        var toolbarItems = toolbar.items
         for (index, loadedPicture) in StorageManager.loadPictures().enumerated() {
             guard index < imageViews.count else { break }
-
-            if let loadedPicture = loadedPicture {
-                imageViews[index].image = loadedPicture.image
-                if let buttonIndex = toolbarItems?.firstIndex(of: addImageButtons[index]) {
-                    toolbarItems?[buttonIndex] = removeImageButtons[index]
-                }
-            } else {
-                imageViews[index].image = nil
-                if let buttonIndex = toolbarItems?.firstIndex(of: removeImageButtons[index]) {
-                    toolbarItems?[buttonIndex] = addImageButtons[index]
-                }
-            }
+            imageViews[index].image = loadedPicture?.image
         }
 
-        self.toolbar.setItems(toolbarItems, animated: true)
+        for index in 0..<imageViews.count {
+            updateToolbarButtons(forPosition: index)
+        }
     }
     
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -61,62 +52,53 @@ class SettingsViewController: UITableViewController {
         ])
     }
 
+    @IBAction func imageViewTapped(_ sender: UITapGestureRecognizer) {
+        if let imageView = sender.view as? UIImageView,
+           let imageIndex = imageViews.firstIndex(of: imageView) {
+            addImage(forPosition: imageIndex)
+        }
+    }
+
     @IBAction func addImageTapped(_ sender: UIBarButtonItem) {
-        if let imageIndex = addImageButtons.firstIndex(of: sender),
-           var toolbarItems = toolbar.items,
-           let toolbarIndex = toolbarItems.firstIndex(of: sender) {
-
-            let imageView = imageViews[imageIndex]
-            chooseImage(forPosition: imageIndex) { [weak self, weak imageView] in
-                guard let self = self, let imageView = imageView else { return }
-
-                if imageView.image != nil {
-                    toolbarItems[toolbarIndex] = self.removeImageButtons[imageIndex]
-                    self.toolbar.setItems(toolbarItems, animated: true)
-                }
-            }
+        if let imageIndex = addImageButtons.firstIndex(of: sender) {
+            addImage(forPosition: imageIndex)
         }
     }
 
     @IBAction func removeImageTapped(_ sender: UIBarButtonItem) {
-        if let imageIndex = removeImageButtons.firstIndex(of: sender),
-           var toolbarItems = toolbar.items,
-           let toolbarIndex = toolbarItems.firstIndex(of: sender) {
-
+        if let imageIndex = removeImageButtons.firstIndex(of: sender) {
             confirmRemoveImage(forButton: sender) { [weak self] remove in
                 if remove, let self = self {
                     self.imageViews[imageIndex].image = nil
-
-                    toolbarItems[toolbarIndex] = self.addImageButtons[imageIndex]
-                    self.toolbar.setItems(toolbarItems, animated: true)
-
+                    self.updateToolbarButtons(forPosition: imageIndex)
                     StorageManager.removePicture(fromPosition: imageIndex)
                 }
             }
         }
     }
 
-    @IBAction func imageViewTapped(_ sender: UITapGestureRecognizer) {
-        if let imageView = sender.view as? UIImageView,
-           let imageIndex = imageViews.firstIndex(of: imageView),
-           var toolbarItems = toolbar.items,
-           let toolbarIndex = toolbarItems.firstIndex(of: addImageButtons[imageIndex]) {
+    @IBAction func rotateImageTapped(_ sender: UIBarButtonItem) {
 
-            chooseImage(forPosition: imageIndex) { [weak self, weak imageView] in
-                guard let self = self, let imageView = imageView else { return }
-
-                if imageView.image != nil {
-                    toolbarItems[toolbarIndex] = self.removeImageButtons[imageIndex]
-                    self.toolbar.setItems(toolbarItems, animated: true)
-                }
-            }
-        }
     }
 
     @IBAction func brightnessChanged(_ sender: UISwitch, forEvent event: UIEvent) {
         if AppSettings.useMaximumBrightness != sender.isOn {
             AppSettings.useMaximumBrightness = sender.isOn
         }
+    }
+
+    private func addImage(forPosition index: Int) {
+        chooseImage(forPosition: index) { [weak self] in
+            guard let self = self else { return }
+            self.updateToolbarButtons(forPosition: index)
+        }
+    }
+
+    private func updateToolbarButtons(forPosition index: Int) {
+        let hasImage = imageViews[index].image != nil
+        addImageButtons[index].isHidden = hasImage
+        removeImageButtons[index].isHidden = !hasImage
+        rotateImageButtons[index].isHidden = !hasImage
     }
 
     private func chooseImage(forPosition index: Int, completion: @escaping () -> Void) {

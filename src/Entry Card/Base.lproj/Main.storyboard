@@ -187,23 +187,53 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="704" height="52"/>
                                                     <items>
                                                         <barButtonItem style="plain" systemItem="flexibleSpace" id="wCa-DM-EC4"/>
-                                                        <barButtonItem tag="1" systemItem="add" id="1MI-hd-Jha">
+                                                        <barButtonItem tag="1" image="rotate-right" style="plain" id="v66-Jh-DaE" userLabel="Rotate">
+                                                            <connections>
+                                                                <action selector="rotateImageTapped:" destination="a5X-e2-iJz" id="6ta-Pm-xlg"/>
+                                                            </connections>
+                                                        </barButtonItem>
+                                                        <barButtonItem tag="1" style="plain" systemItem="add" id="1MI-hd-Jha">
                                                             <connections>
                                                                 <action selector="addImageTapped:" destination="a5X-e2-iJz" id="Ufm-mV-wm6"/>
                                                             </connections>
                                                         </barButtonItem>
+                                                        <barButtonItem tag="1" style="plain" systemItem="trash" id="qrQ-uf-QH2">
+                                                            <connections>
+                                                                <action selector="removeImageTapped:" destination="a5X-e2-iJz" id="JxH-2Q-1Gy"/>
+                                                            </connections>
+                                                        </barButtonItem>
                                                         <barButtonItem style="plain" systemItem="flexibleSpace" id="wL3-Ud-Di7"/>
                                                         <barButtonItem style="plain" systemItem="flexibleSpace" id="oN1-y4-uj4"/>
-                                                        <barButtonItem tag="2" systemItem="add" id="0DD-Rz-3bl">
+                                                        <barButtonItem tag="2" image="rotate-right" style="plain" id="TMN-jj-Hsd" userLabel="Rotate">
+                                                            <connections>
+                                                                <action selector="rotateImageTapped:" destination="a5X-e2-iJz" id="5q4-MA-lsB"/>
+                                                            </connections>
+                                                        </barButtonItem>
+                                                        <barButtonItem tag="2" style="plain" systemItem="add" id="0DD-Rz-3bl">
                                                             <connections>
                                                                 <action selector="addImageTapped:" destination="a5X-e2-iJz" id="fgt-Zr-thp"/>
                                                             </connections>
                                                         </barButtonItem>
+                                                        <barButtonItem tag="2" style="plain" systemItem="trash" id="WzX-LI-0QC">
+                                                            <connections>
+                                                                <action selector="removeImageTapped:" destination="a5X-e2-iJz" id="2Gu-Yj-e15"/>
+                                                            </connections>
+                                                        </barButtonItem>
                                                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Bcx-Rs-9JE"/>
                                                         <barButtonItem style="plain" systemItem="flexibleSpace" id="oPF-a5-xzn"/>
-                                                        <barButtonItem tag="3" systemItem="add" id="gj3-Tj-Th0">
+                                                        <barButtonItem tag="3" image="rotate-right" style="plain" id="2ym-bG-QQ5" userLabel="Rotate">
+                                                            <connections>
+                                                                <action selector="rotateImageTapped:" destination="a5X-e2-iJz" id="gVI-J8-qW0"/>
+                                                            </connections>
+                                                        </barButtonItem>
+                                                        <barButtonItem tag="3" style="plain" systemItem="add" id="gj3-Tj-Th0">
                                                             <connections>
                                                                 <action selector="addImageTapped:" destination="a5X-e2-iJz" id="kdr-gc-7jQ"/>
+                                                            </connections>
+                                                        </barButtonItem>
+                                                        <barButtonItem tag="3" style="plain" systemItem="trash" id="b3X-7n-TbQ">
+                                                            <connections>
+                                                                <action selector="removeImageTapped:" destination="a5X-e2-iJz" id="Pm2-MC-IYS"/>
                                                             </connections>
                                                         </barButtonItem>
                                                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Wtq-8t-C7T"/>
@@ -444,6 +474,56 @@ https://spin.atomicobject.com/2017/07/18/swift-interface-builder</string>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="2" indentationWidth="10" id="Pqq-3l-BBh" userLabel="License: UIBarButtonItem visibility">
+                                        <rect key="frame" x="0.0" y="796.5" width="704" height="52"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pqq-3l-BBh" id="FUa-6E-hDk">
+                                            <rect key="frame" x="0.0" y="0.0" width="704" height="52"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OZg-DL-jKS" userLabel="Border view">
+                                                    <rect key="frame" x="4" y="4" width="696" height="44"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TH9-s1-l6J" userLabel="License text">
+                                                            <rect key="frame" x="20" y="20" width="656" height="4"/>
+                                                            <string key="text">UIBarButtonItem Extension
+by Mike Woelmer
+
+© 2018 Atomic Object LLC
+
+https://spin.atomicobject.com/2018/03/15/extend-uibarbuttonitem</string>
+                                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="TH9-s1-l6J" secondAttribute="trailing" constant="20" symbolic="YES" id="Mek-4E-1ev"/>
+                                                        <constraint firstItem="TH9-s1-l6J" firstAttribute="leading" secondItem="OZg-DL-jKS" secondAttribute="leading" constant="20" symbolic="YES" id="Q27-PE-kMh"/>
+                                                        <constraint firstItem="TH9-s1-l6J" firstAttribute="top" secondItem="OZg-DL-jKS" secondAttribute="top" constant="20" symbolic="YES" id="ant-z1-a98"/>
+                                                        <constraint firstAttribute="bottom" secondItem="TH9-s1-l6J" secondAttribute="bottom" constant="20" symbolic="YES" id="vas-9t-wV6"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="0.5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" name="TableView Border Color"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="OZg-DL-jKS" firstAttribute="top" secondItem="FUa-6E-hDk" secondAttribute="top" constant="4" id="F4G-Dl-2f3"/>
+                                                <constraint firstAttribute="bottom" secondItem="OZg-DL-jKS" secondAttribute="bottom" constant="4" id="S0W-2c-4Xw"/>
+                                                <constraint firstItem="OZg-DL-jKS" firstAttribute="leading" secondItem="FUa-6E-hDk" secondAttribute="leading" constant="4" id="sLJ-Tp-n2p"/>
+                                                <constraint firstAttribute="trailing" secondItem="OZg-DL-jKS" secondAttribute="trailing" constant="4" id="xRE-30-XBU"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -452,23 +532,7 @@ https://spin.atomicobject.com/2017/07/18/swift-interface-builder</string>
                             <outlet property="delegate" destination="a5X-e2-iJz" id="lEF-1j-rJ1"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem tag="1" systemItem="trash" id="qrQ-uf-QH2">
-                            <connections>
-                                <action selector="removeImageTapped:" destination="a5X-e2-iJz" id="JxH-2Q-1Gy"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem tag="2" systemItem="trash" id="WzX-LI-0QC">
-                            <connections>
-                                <action selector="removeImageTapped:" destination="a5X-e2-iJz" id="2Gu-Yj-e15"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem tag="3" systemItem="trash" id="b3X-7n-TbQ">
-                            <connections>
-                                <action selector="removeImageTapped:" destination="a5X-e2-iJz" id="Pm2-MC-IYS"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Settings" id="lOG-VV-50C">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="wTd-nr-pq0">
                             <connections>
@@ -489,6 +553,9 @@ https://spin.atomicobject.com/2017/07/18/swift-interface-builder</string>
                         <outletCollection property="removeImageButtons" destination="qrQ-uf-QH2" collectionClass="NSMutableArray" id="8a9-3o-cim"/>
                         <outletCollection property="removeImageButtons" destination="WzX-LI-0QC" collectionClass="NSMutableArray" id="jh0-iB-wbN"/>
                         <outletCollection property="removeImageButtons" destination="b3X-7n-TbQ" collectionClass="NSMutableArray" id="ohz-d7-nkH"/>
+                        <outletCollection property="rotateImageButtons" destination="v66-Jh-DaE" collectionClass="NSMutableArray" id="uiE-x3-IDt"/>
+                        <outletCollection property="rotateImageButtons" destination="TMN-jj-Hsd" collectionClass="NSMutableArray" id="GZR-dN-Yei"/>
+                        <outletCollection property="rotateImageButtons" destination="2ym-bG-QQ5" collectionClass="NSMutableArray" id="yG3-Tz-PsV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ZF-EN-9uy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -592,6 +659,7 @@ https://spin.atomicobject.com/2017/07/18/swift-interface-builder</string>
     <resources>
         <image name="Empty Picture" width="100" height="100"/>
         <image name="gearshape" width="25" height="25"/>
+        <image name="rotate-right" width="25" height="28"/>
         <namedColor name="Settings Button Color">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </namedColor>

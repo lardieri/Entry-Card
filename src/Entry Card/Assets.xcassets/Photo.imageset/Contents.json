@@ -1,12 +1,15 @@
 {
+  "images" : [
+    {
+      "filename" : "Photo.pdf",
+      "idiom" : "universal"
+    }
+  ],
   "info" : {
     "author" : "xcode",
     "version" : 1
   },
-  "images" : [
-    {
-      "idiom" : "universal",
-      "filename" : "Photo.pdf"
-    }
-  ]
+  "properties" : {
+    "preserves-vector-representation" : true
+  }
 }
