@@ -78,7 +78,14 @@ class SettingsViewController: UITableViewController {
     }
 
     @IBAction func rotateImageTapped(_ sender: UIBarButtonItem) {
+        if let imageIndex = rotateImageButtons.firstIndex(of: sender),
+           let originalImage = imageViews[imageIndex].image {
+            let rotatedImage = rotate(originalImage: originalImage)
 
+            StorageManager.removePicture(fromPosition: imageIndex)
+            imageViews[imageIndex].image = rotatedImage
+            _ = StorageManager.addPicture(fromImage: rotatedImage, atPosition: imageIndex)
+        }
     }
 
     @IBAction func brightnessChanged(_ sender: UISwitch, forEvent event: UIEvent) {
