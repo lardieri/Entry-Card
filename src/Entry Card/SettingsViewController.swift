@@ -53,39 +53,35 @@ class SettingsViewController: UITableViewController {
     }
 
     @IBAction func imageViewTapped(_ sender: UITapGestureRecognizer) {
-        if let imageView = sender.view as? UIImageView,
-           let imageIndex = imageViews.firstIndex(of: imageView) {
+        guard let imageView = sender.view as? UIImageView,
+              let imageIndex = imageViews.firstIndex(of: imageView) else { return }
+
+        if imageViews[imageIndex].image == nil {
             addImage(forPosition: imageIndex)
+        } else {
+            rotateImage(forPosition: imageIndex)
         }
     }
 
     @IBAction func addImageTapped(_ sender: UIBarButtonItem) {
-        if let imageIndex = addImageButtons.firstIndex(of: sender) {
-            addImage(forPosition: imageIndex)
-        }
+        guard let imageIndex = addImageButtons.firstIndex(of: sender) else { return }
+        addImage(forPosition: imageIndex)
     }
 
     @IBAction func removeImageTapped(_ sender: UIBarButtonItem) {
-        if let imageIndex = removeImageButtons.firstIndex(of: sender) {
-            confirmRemoveImage(forButton: sender) { [weak self] remove in
-                if remove, let self = self {
-                    self.imageViews[imageIndex].image = nil
-                    self.updateToolbarButtons(forPosition: imageIndex)
-                    StorageManager.removePicture(fromPosition: imageIndex)
-                }
+        guard let imageIndex = removeImageButtons.firstIndex(of: sender) else { return }
+        confirmRemoveImage(forButton: sender) { [weak self] remove in
+            if remove, let self = self {
+                self.imageViews[imageIndex].image = nil
+                self.updateToolbarButtons(forPosition: imageIndex)
+                StorageManager.removePicture(fromPosition: imageIndex)
             }
         }
     }
 
     @IBAction func rotateImageTapped(_ sender: UIBarButtonItem) {
-        if let imageIndex = rotateImageButtons.firstIndex(of: sender),
-           let originalImage = imageViews[imageIndex].image {
-            let rotatedImage = rotate(originalImage: originalImage)
-
-            StorageManager.removePicture(fromPosition: imageIndex)
-            imageViews[imageIndex].image = rotatedImage
-            _ = StorageManager.addPicture(fromImage: rotatedImage, atPosition: imageIndex)
-        }
+        guard let imageIndex = rotateImageButtons.firstIndex(of: sender) else { return }
+        rotateImage(forPosition: imageIndex)
     }
 
     @IBAction func brightnessChanged(_ sender: UISwitch, forEvent event: UIEvent) {
@@ -99,6 +95,15 @@ class SettingsViewController: UITableViewController {
             guard let self = self else { return }
             self.updateToolbarButtons(forPosition: index)
         }
+    }
+
+    private func rotateImage(forPosition index: Int) {
+        guard let originalImage = imageViews[index].image else { return }
+
+        StorageManager.removePicture(fromPosition: index)
+        let rotatedImage = rotate(originalImage: originalImage)
+        imageViews[index].image = rotatedImage
+        _ = StorageManager.addPicture(fromImage: rotatedImage, atPosition: index)
     }
 
     private func updateToolbarButtons(forPosition index: Int) {
