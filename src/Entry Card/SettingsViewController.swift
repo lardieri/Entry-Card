@@ -174,6 +174,10 @@ class SettingsViewController: UITableViewController {
             })
         }
 
+        alert.addAction(alertActionWithIcon(title: "Files", imageName: Images.folder) { _ in
+            completion(nil)
+        })
+
         alert.addAction(
             UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
                 completion(nil)

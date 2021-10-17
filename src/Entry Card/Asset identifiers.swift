@@ -11,6 +11,7 @@ enum Images {
     static let emptyPicture = "Empty Picture"
     static let camera = "Camera"
     static let photo = "Photo"
+    static let folder = "Folder"
 
 }
 
