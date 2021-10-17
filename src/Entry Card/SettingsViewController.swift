@@ -91,8 +91,11 @@ class SettingsViewController: UITableViewController {
     }
 
     private func addImage(forPosition index: Int) {
-        chooseImage(forPosition: index) { [weak self] in
+        chooseImage(forPosition: index) { [weak self] newImage in
             guard let self = self else { return }
+            if let newImage = newImage {
+                self.imageViews[index].image = newImage
+            }
             self.updateToolbarButtons(forPosition: index)
         }
     }
@@ -113,13 +116,11 @@ class SettingsViewController: UITableViewController {
         rotateImageButtons[index].isHidden = !hasImage
     }
 
-    private func chooseImage(forPosition index: Int, completion: @escaping () -> Void) {
+    private func chooseImage(forPosition index: Int, completion: @escaping (UIImage?) -> Void) {
 
         class Delegate: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-            init(vc: SettingsViewController, imageView: UIImageView, index: Int, completion: @escaping () -> Void) {
-                self.vc = vc
-                self.imageView = imageView
+            init(index: Int, completion: @escaping (UIImage?) -> Void) {
                 self.index = index
                 self.completion = completion
 
@@ -127,17 +128,19 @@ class SettingsViewController: UITableViewController {
             }
 
             func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-                vc.dismiss(animated: true) {
-                    self.completion()
+                picker.presentingViewController?.dismiss(animated: true) {
+                    self.completion(nil)
                 }
             }
 
             func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+                var newImage: UIImage? = nil
+
                 // Case 1: User edited the picture.
                 // The edited picture only exists in memory, and we need to save it.
                 if let editedImage = info[.editedImage] as? UIImage {
                     if StorageManager.addPicture(fromImage: editedImage, atPosition: index) {
-                        imageView.image = editedImage
+                        newImage = editedImage
                     }
                 }
 
@@ -146,7 +149,7 @@ class SettingsViewController: UITableViewController {
                 else if let imageURL = info[.imageURL] as? URL,
                         let originalImage = info[.originalImage] as? UIImage {
                     if StorageManager.addPicture(fromURL: imageURL, atPosition: index) {
-                        imageView.image = originalImage
+                        newImage = originalImage
                     }
                 }
 
@@ -154,19 +157,17 @@ class SettingsViewController: UITableViewController {
                 // The photo only exists in memory, and we need to save it.
                 else if let originalImage = info[.originalImage] as? UIImage {
                     if StorageManager.addPicture(fromImage: originalImage, atPosition: index) {
-                        imageView.image = originalImage
+                        newImage = originalImage
                     }
                 }
 
-                vc.dismiss(animated: true) {
-                    self.completion()
+                picker.presentingViewController?.dismiss(animated: true) {
+                    self.completion(newImage)
                 }
             }
 
-            private let vc: SettingsViewController
-            private let imageView: UIImageView
             private let index: Int
-            private let completion: () -> Void
+            private let completion: (UIImage?) -> Void
 
         }
 
@@ -190,7 +191,7 @@ class SettingsViewController: UITableViewController {
             imagePicker.allowsEditing = false // Built-in editing just crops to a square.
 
             let imageView = imageViews[index]
-            let delegate = Delegate(vc: self, imageView: imageView, index: index, completion: completion)
+            let delegate = Delegate(index: index, completion: completion)
             imagePicker.delegate = delegate
 
             if let popPC = imagePicker.popoverPresentationController {
@@ -215,20 +216,20 @@ class SettingsViewController: UITableViewController {
         let alert = UIAlertController(title: "SELECT PICTURE", message: nil, preferredStyle: .actionSheet)
 
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            alert.addAction(alertActionWithIcon(title: "Camera", imageName: Images.camera, handler: { _ in
+            alert.addAction(alertActionWithIcon(title: "Camera", imageName: Images.camera) { _ in
                 showImagePicker(for: .camera)
-            }))
+            })
         }
 
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            alert.addAction(alertActionWithIcon(title: "Photos", imageName: Images.photo, handler: { _ in
+            alert.addAction(alertActionWithIcon(title: "Photos", imageName: Images.photo) { _ in
                 showImagePicker(for: .photoLibrary)
-            }))
+            })
         }
 
         alert.addAction(
             UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
-                completion()
+                completion(nil)
             })
         )
 
