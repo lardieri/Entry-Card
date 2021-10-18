@@ -150,6 +150,42 @@ class SettingsViewController: UITableViewController {
             self.present(imagePicker, animated: true, completion: nil)
         }
 
+        func showDocumentPicker() {
+
+            class DocumentPickerWithStrongDelegate: UIDocumentPickerViewController {
+
+                override weak var delegate: (UIDocumentPickerDelegate)? {
+                    didSet {
+                        strongDelegate = delegate
+                    }
+                }
+
+                private var strongDelegate: (UIDocumentPickerDelegate)?
+
+            }
+
+            let documentPicker: UIDocumentPickerViewController
+//            if #available(iOS 14, *) {
+//                let types: [UTType] = [ .heic, .jpeg, .png, /* .pdf */ ]
+//                documentPicker = DocumentPickerWithStrongDelegate(forOpeningContentTypes: types, asCopy: true)
+//            } else {
+                let types = [ "public.heic", "public.jpeg", "public.jpeg-2000", "public.png", /* "com.adobe.pdf" */ ]
+                documentPicker = DocumentPickerWithStrongDelegate(documentTypes: types, in: .import)
+//            }
+
+            let imageView = imageViews[index]
+            let delegate = DocumentPickerDelegate(index: index, completion: completion)
+            documentPicker.delegate = delegate
+
+            if let popPC = documentPicker.popoverPresentationController {
+                popPC.sourceView = imageView
+                popPC.sourceRect = imageView.bounds
+                popPC.permittedArrowDirections = .any
+            }
+
+            self.present(documentPicker, animated: true, completion: nil)
+        }
+
         func alertActionWithIcon(title: String, imageName: String, handler: ((UIAlertAction) -> Void)?) -> UIAlertAction {
             let action = UIAlertAction(title: title, style: .default, handler: handler)
 
@@ -175,7 +211,7 @@ class SettingsViewController: UITableViewController {
         }
 
         alert.addAction(alertActionWithIcon(title: "Files", imageName: Images.folder) { _ in
-            completion(nil)
+            showDocumentPicker()
         })
 
         alert.addAction(
@@ -268,3 +304,30 @@ fileprivate class ImagePickerControllerDelegate: NSObject, UIImagePickerControll
 }
 
 
+fileprivate class DocumentPickerDelegate: NSObject, UIDocumentPickerDelegate {
+
+    init(index: Int, completion: @escaping (UIImage?) -> Void) {
+        self.index = index
+        self.completion = completion
+
+        super.init()
+    }
+
+    func documentPicker(_ picker: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        if let imageURL = urls.first,
+           StorageManager.addPicture(fromURL: imageURL, atPosition: index),
+           let image = UIImage(contentsOfFile: imageURL.path) {
+            completion(image)
+        } else {
+            completion(nil)
+        }
+    }
+
+    func documentPickerWasCancelled(_ picker: UIDocumentPickerViewController) {
+        completion(nil)
+    }
+
+    private let index: Int
+    private let completion: (UIImage?) -> Void
+
+}

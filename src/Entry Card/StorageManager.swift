@@ -142,6 +142,12 @@ class StorageManager {
                 try? fileManager.removeItem(at: file)
             }
         }
+
+        if let tmpFiles = try? fileManager.contentsOfDirectory(at: fileManager.temporaryDirectory, includingPropertiesForKeys: []) {
+            for file in tmpFiles {
+                try? fileManager.removeItem(at: file)
+            }
+        }
     }
 
     private static let storageDirectory: URL? =
