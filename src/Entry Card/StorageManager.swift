@@ -8,7 +8,6 @@ import UIKit
 class StorageManager {
 
     private static let maxPictures = 3
-    private static let placeholderFilename = String()
     private static let jpegQuality: CGFloat = 0.8
     private static let jpegExtension = "jpg"
 
@@ -18,7 +17,7 @@ class StorageManager {
         var loadedPictures = [LoadedPicture?]()
         guard let directory = storageDirectory else { return loadedPictures }
 
-        let pictureFiles = AppSettings.pictureFiles
+        let pictureFiles = AppSettings.storedPictures.map { $0.filename }
         for (index, filename) in pictureFiles.enumerated() {
             guard index < maxPictures else { break }
 
@@ -80,9 +79,9 @@ class StorageManager {
     }
 
     static func removePicture(fromPosition index: Int) {
-        guard index < AppSettings.pictureFiles.count else { return }
+        guard index < AppSettings.storedPictures.count else { return }
 
-        let filename = AppSettings.pictureFiles[index]
+        let filename = AppSettings.storedPictures[index].filename
         guard !filename.isEmpty else { return }
 
         guard let directory = storageDirectory else { return }
@@ -105,25 +104,26 @@ class StorageManager {
     private static func addSavedFilename(_ filename: String, atPosition index: Int) {
         guard index < maxPictures else { return }
 
-        var pictureFiles = AppSettings.pictureFiles
+        var storedPictures = AppSettings.storedPictures
+        let newStoredPicture = AppSettings.StoredPicture(filename: filename, rotation: 0)
 
-        if pictureFiles.count > index {
-            pictureFiles[index] = filename
+        if storedPictures.count > index {
+            storedPictures[index] = newStoredPicture
         } else {
-            while pictureFiles.count < index {
-                pictureFiles.append(placeholderFilename)
+            while storedPictures.count < index {
+                storedPictures.append(.placeholder)
             }
 
-            pictureFiles.append(filename)
+            storedPictures.append(newStoredPicture)
         }
 
-        AppSettings.pictureFiles = pictureFiles
+        AppSettings.storedPictures = storedPictures
     }
 
     private static func removeSavedFilename(fromPosition index: Int) {
-        guard index < AppSettings.pictureFiles.count else { return }
+        guard index < AppSettings.storedPictures.count else { return }
 
-        AppSettings.pictureFiles[index] = placeholderFilename
+        AppSettings.storedPictures[index] = .placeholder
     }
 
     private static func nextFileURL(withExtension pathExtension: String) -> URL? {
@@ -136,7 +136,7 @@ class StorageManager {
         guard let storageDirectory = storageDirectory else { return }
 
         if let allFiles = try? fileManager.contentsOfDirectory(at: storageDirectory, includingPropertiesForKeys: []) {
-            let pictureFiles = AppSettings.pictureFiles
+            let pictureFiles = AppSettings.storedPictures.map( { $0.filename } )
             let extraneousFiles = allFiles.drop { pictureFiles.contains($0.lastPathComponent) }
             for file in extraneousFiles {
                 try? fileManager.removeItem(at: file)
