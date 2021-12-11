@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import UniformTypeIdentifiers
 
 class SettingsViewController: UITableViewController {
 
@@ -174,13 +175,13 @@ class SettingsViewController: UITableViewController {
             }
 
             let documentPicker: UIDocumentPickerViewController
-//            if #available(iOS 14, *) {
-//                let types: [UTType] = [ .heic, .jpeg, .png, /* .pdf */ ]
-//                documentPicker = DocumentPickerWithStrongDelegate(forOpeningContentTypes: types, asCopy: true)
-//            } else {
-                let types = [ "public.heic", "public.jpeg", "public.jpeg-2000", "public.png", /* "com.adobe.pdf" */ ]
+            if #available(iOS 14, *) {
+                let types: [UTType] = [ .heic, .jpeg, .png, .pdf ]
+                documentPicker = DocumentPickerWithStrongDelegate(forOpeningContentTypes: types, asCopy: true)
+            } else {
+                let types = [ "public.heic", "public.jpeg", "public.jpeg-2000", "public.png", "com.adobe.pdf" ]
                 documentPicker = DocumentPickerWithStrongDelegate(documentTypes: types, in: .import)
-//            }
+            }
 
             let imageView = imageViews[index]
             let delegate = DocumentPickerDelegate(index: index, completion: completion)
@@ -325,7 +326,7 @@ fileprivate class DocumentPickerDelegate: NSObject, UIDocumentPickerDelegate {
     func documentPicker(_ picker: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         if let imageURL = urls.first,
            StorageManager.addPicture(fromURL: imageURL, atPosition: index),
-           let image = UIImage(contentsOfFile: imageURL.path) {
+           let image = UIImage.fromURL(imageURL) {
             completion(image)
         } else {
             completion(nil)
