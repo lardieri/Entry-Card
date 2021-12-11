@@ -191,7 +191,7 @@ extension UIImage {
         guard let document = PDFDocument(url: url) else { return nil }
         guard let page = document.page(at: 0) else { return nil }
 
-        let pageRect = page.bounds(for: .mediaBox)
+        let pageRect = page.bounds(for: .cropBox)
         let renderer = UIGraphicsImageRenderer(size: pageRect.size)
         let image = renderer.image { ctx in
             UIColor.white.set()
@@ -200,7 +200,7 @@ extension UIImage {
             ctx.cgContext.translateBy(x: 0.0, y: pageRect.size.height)
             ctx.cgContext.scaleBy(x: 1.0, y: -1.0)
 
-            page.draw(with: .mediaBox, to: ctx.cgContext)
+            page.draw(with: .cropBox, to: ctx.cgContext)
         }
 
         return image
