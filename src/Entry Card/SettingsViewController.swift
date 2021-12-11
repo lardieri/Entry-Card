@@ -18,17 +18,23 @@ class SettingsViewController: UITableViewController {
     private let borderViewTag = 314159
     private let borderColor = UIColor(named: Colors.tableViewBorder)
 
+    private var loadedPictures: [LoadedPicture?] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         brightnessSwitch.setOn(AppSettings.useMaximumBrightness, animated: false)
 
-        for (index, loadedPicture) in StorageManager.loadPictures().enumerated() {
-            guard index < imageViews.count else { break }
-            imageViews[index].image = loadedPicture?.image
-        }
+        loadedPictures = StorageManager.loadPictures()
 
-        for index in 0..<imageViews.count {
+        for index in 0 ..< imageViews.count {
+            if index < loadedPictures.count {
+                imageViews[index].image = loadedPictures[index]?.rotatedImage()
+            } else {
+                loadedPictures.append(nil)
+                imageViews[index].image = nil
+            }
+
             updateToolbarButtons(forPosition: index)
         }
     }
@@ -73,6 +79,7 @@ class SettingsViewController: UITableViewController {
         confirmRemoveImage(forButton: sender) { [weak self] remove in
             if remove, let self = self {
                 self.imageViews[imageIndex].image = nil
+                self.loadedPictures[imageIndex] = nil
                 self.updateToolbarButtons(forPosition: imageIndex)
                 StorageManager.removePicture(fromPosition: imageIndex)
             }
@@ -94,6 +101,7 @@ class SettingsViewController: UITableViewController {
         chooseImage(forPosition: index) { [weak self] newImage in
             guard let self = self else { return }
             if let newImage = newImage {
+                self.loadedPictures[index] = LoadedPicture(originalImage: newImage, filename: "", rotation: 0)
                 self.imageViews[index].image = newImage
             }
             self.updateToolbarButtons(forPosition: index)
@@ -101,12 +109,13 @@ class SettingsViewController: UITableViewController {
     }
 
     private func rotateImage(forPosition index: Int) {
-        guard let originalImage = imageViews[index].image else { return }
+        guard var loadedPicture = loadedPictures[index] else { return }
 
-        StorageManager.removePicture(fromPosition: index)
-        let rotatedImage = rotate(originalImage: originalImage)
-        imageViews[index].image = rotatedImage
-        _ = StorageManager.addPicture(fromImage: rotatedImage, atPosition: index)
+        loadedPicture.rotation += 1
+        loadedPictures[index] = loadedPicture
+        imageViews[index].image = loadedPicture.rotatedImage()
+
+        AppSettings.storedPictures[index].rotation = loadedPicture.rotation
     }
 
     private func updateToolbarButtons(forPosition index: Int) {

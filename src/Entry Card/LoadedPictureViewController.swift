@@ -15,7 +15,7 @@ class LoadedPictureViewController: UIViewController {
 
         scrollView!.delegate = self
 
-        imageView?.image = loadedPicture?.image
+        imageView?.image = loadedPicture?.rotatedImage()
         adjustZoomFactors()
     }
 
@@ -32,7 +32,7 @@ class LoadedPictureViewController: UIViewController {
     private func adjustZoomFactors() {
         guard let scrollView = self.scrollView else { return }
         guard let _ = self.imageView else { return }
-        guard let image = loadedPicture?.image else { return }
+        guard let image = loadedPicture?.rotatedImage() else { return }
 
         let imageSize = image.size
         let viewSize = scrollView.frame.size
@@ -58,9 +58,9 @@ class LoadedPictureViewController: UIViewController {
         }
     }
 
-    var loadedPicture: StorageManager.LoadedPicture? {
+    var loadedPicture: LoadedPicture? {
         didSet {
-            imageView?.image = loadedPicture?.image
+            imageView?.image = loadedPicture?.rotatedImage()
             adjustZoomFactors()
         }
     }

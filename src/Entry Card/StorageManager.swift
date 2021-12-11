@@ -11,23 +11,22 @@ class StorageManager {
     private static let jpegQuality: CGFloat = 0.8
     private static let jpegExtension = "jpg"
 
-    typealias LoadedPicture = (filename: String, image: UIImage)
-
     static func loadPictures() -> [LoadedPicture?] {
         var loadedPictures = [LoadedPicture?]()
         guard let directory = storageDirectory else { return loadedPictures }
 
-        let pictureFiles = AppSettings.storedPictures.map { $0.filename }
-        for (index, filename) in pictureFiles.enumerated() {
+        for (index, storedPicture) in AppSettings.storedPictures.enumerated() {
             guard index < maxPictures else { break }
 
-            if !filename.isEmpty {
-                let fullPath = directory.appendingPathComponent(filename)
+            if !storedPicture.filename.isEmpty {
+                let fullPath = directory.appendingPathComponent(storedPicture.filename)
                 if let image = UIImage(contentsOfFile: fullPath.path) {
-                    loadedPictures.append((filename, image))
+                    loadedPictures.append(LoadedPicture(originalImage: image, filename: storedPicture.filename, rotation: storedPicture.rotation))
                     continue
                 } else {
-                    removePicture(fromPosition: index)
+                    OperationQueue.current!.addOperation {
+                        removePicture(fromPosition: index)
+                    }
                 }
             }
 
@@ -105,7 +104,7 @@ class StorageManager {
         guard index < maxPictures else { return }
 
         var storedPictures = AppSettings.storedPictures
-        let newStoredPicture = AppSettings.StoredPicture(filename: filename, rotation: 0)
+        let newStoredPicture = StoredPicture(filename: filename, rotation: 0)
 
         if storedPictures.count > index {
             storedPictures[index] = newStoredPicture
@@ -164,5 +163,13 @@ class StorageManager {
         let strippedFilenames = try? fileManager.contentsOfDirectory(at: storageDirectory, includingPropertiesForKeys: []).map { $0.deletingPathExtension().lastPathComponent }
         return strippedFilenames?.compactMap { UInt($0) }.max() ?? 0
     }()
+
+}
+
+
+fileprivate extension StoredPicture {
+
+    private static let placeholderFilename = String()
+    static let placeholder = StoredPicture(filename: placeholderFilename, rotation: 0)
 
 }

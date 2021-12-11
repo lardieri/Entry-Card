@@ -7,43 +7,6 @@ import Foundation
 
 class AppSettings {
 
-    struct StoredPicture: Equatable {
-        var filename: String
-        var rotation: Int
-
-        private static let placeholderFilename = String()
-        static let placeholder = StoredPicture(filename: placeholderFilename, rotation: 0)
-
-        private enum Key {
-            static let filename = "filename"
-            static let rotation = "rotation"
-        }
-
-        fileprivate typealias DictionaryRepresentation = [ String : Any ]
-
-        init(filename: String, rotation: Int) {
-            self.filename = filename
-            self.rotation = rotation
-        }
-
-        fileprivate init?(fromDictionary dictionary: DictionaryRepresentation) {
-            if let filename = dictionary[Key.filename] as? String,
-               let rotation = dictionary[Key.rotation] as? Int {
-                self.filename = filename
-                self.rotation = rotation
-            } else {
-                return nil
-            }
-        }
-
-        fileprivate func toDictionary() -> DictionaryRepresentation {
-            var dictionary = DictionaryRepresentation()
-            dictionary[Key.filename] = self.filename
-            dictionary[Key.rotation] = self.rotation
-            return dictionary
-        }
-    }
-
     private enum Key {
         static let storedPictures = "pictures"
         static let pictureFiles = "pictureFiles" // legacy
@@ -95,6 +58,37 @@ class AppSettings {
                 UserDefaults.standard.set(newValue, forKey: Key.useMaximumBrightness)
             }
         }
+    }
+
+}
+
+
+fileprivate extension StoredPicture {
+
+    private enum Key {
+        static let filename = "filename"
+        static let rotation = "rotation"
+    }
+
+    typealias DictionaryRepresentation = [ String : Any ]
+
+    init?(fromDictionary dictionary: DictionaryRepresentation) {
+        if let filename = dictionary[Key.filename] as? String,
+           let rotation = dictionary[Key.rotation] as? Int {
+            self.filename = filename
+            self.rotation = rotation
+        } else {
+            return nil
+        }
+    }
+
+    func toDictionary() -> DictionaryRepresentation {
+        var dictionary = DictionaryRepresentation()
+
+        dictionary[Key.filename] = self.filename
+        dictionary[Key.rotation] = self.rotation
+        
+        return dictionary
     }
 
 }

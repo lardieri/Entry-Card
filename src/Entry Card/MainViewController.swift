@@ -62,10 +62,8 @@ class MainViewController: UIViewController {
         var pages = [LoadedPictureViewController]()
 
         let loadedPictures = StorageManager.loadPictures().compactMap { $0 }
-
-        let existingFilenames = (self.pages as! [LoadedPictureViewController]).compactMap { $0.loadedPicture?.filename }
-        let newFilenames = loadedPictures.compactMap { $0.filename }
-        guard existingFilenames != newFilenames else { return }
+        let existingPictures = (self.pages as! [LoadedPictureViewController]).compactMap { $0.loadedPicture }
+        guard loadedPictures != existingPictures else { return }
 
         for loadedPicture in loadedPictures {
             let page = self.storyboard!.instantiateViewController(withIdentifier: Storyboard.loadedPictureViewController) as! LoadedPictureViewController
