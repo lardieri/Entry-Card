@@ -4,7 +4,7 @@ An iOS app to show pictures of your entry/VIP card to the bouncer.
 
 ## What this app does
 
-Gets you in the door faster at your favorite club, bar, or other venue!
+Gets you in the door faster at your favorite restaurant, club, or gym!
 
 ## How to use
 
