@@ -11,11 +11,13 @@ class AppSettings {
         static let storedPictures = "pictures"
         static let pictureFiles = "pictureFiles" // legacy
         static let useMaximumBrightness = "useMaximumBrightness"
+        static let requireUnlock = "requireUnlock"
     }
 
     static func registerDefaults() {
         let defaults = [
-            Key.useMaximumBrightness : false
+            Key.useMaximumBrightness : false,
+            Key.requireUnlock : false
         ]
 
         UserDefaults.standard.register(defaults: defaults)
@@ -56,6 +58,18 @@ class AppSettings {
         set {
             if newValue != useMaximumBrightness {
                 UserDefaults.standard.set(newValue, forKey: Key.useMaximumBrightness)
+            }
+        }
+    }
+
+    static var requireUnlock: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: Key.requireUnlock)
+        }
+
+        set {
+            if newValue != requireUnlock {
+                UserDefaults.standard.set(newValue, forKey: Key.requireUnlock)
             }
         }
     }
