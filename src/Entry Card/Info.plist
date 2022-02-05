@@ -22,6 +22,8 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Use the camera to take a picture of your card.</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Your cards will be displayed after you unlock your device.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Select pictures you have already taken of your card.</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
