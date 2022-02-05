@@ -10,6 +10,8 @@ class SettingsViewController: UITableViewController {
 
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var brightnessSwitch: UISwitch!
+    @IBOutlet weak var requireUnlockLabel: UILabel!
+    @IBOutlet weak var requireUnlockSwitch: UISwitch!
 
     @IBOutlet var imageViews: [UIImageView]! { didSet { imageViews.sort { $0.tag < $1.tag } } }
     @IBOutlet var addImageButtons: [UIBarButtonItem]! { didSet { addImageButtons.sort { $0.tag < $1.tag } } }
@@ -20,11 +22,22 @@ class SettingsViewController: UITableViewController {
     private let borderColor = UIColor(named: Colors.tableViewBorder)
 
     private var loadedPictures: [LoadedPicture?] = []
+    private let lockManager = LockManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         brightnessSwitch.setOn(AppSettings.useMaximumBrightness, animated: false)
+
+        if lockManager.available {
+            requireUnlockLabel.isEnabled = true
+            requireUnlockSwitch.isEnabled = true
+            requireUnlockSwitch.setOn(AppSettings.requireUnlock, animated: false)
+        } else {
+            requireUnlockLabel.isEnabled = false
+            requireUnlockSwitch.isEnabled = false
+            requireUnlockSwitch.setOn(false, animated: false)
+        }
 
         loadedPictures = StorageManager.loadPictures()
 
@@ -95,6 +108,12 @@ class SettingsViewController: UITableViewController {
     @IBAction func brightnessChanged(_ sender: UISwitch, forEvent event: UIEvent) {
         if AppSettings.useMaximumBrightness != sender.isOn {
             AppSettings.useMaximumBrightness = sender.isOn
+        }
+    }
+
+    @IBAction func requireUnlockChanged(_ sender: UISwitch, forEvent event: UIEvent) {
+        if AppSettings.requireUnlock != sender.isOn {
+            AppSettings.requireUnlock = sender.isOn
         }
     }
 

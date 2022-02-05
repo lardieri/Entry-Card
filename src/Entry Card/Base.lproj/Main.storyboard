@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad12_9" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -259,20 +259,20 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="Wyk-3t-vst" userLabel="Other settings">
+                            <tableViewSection headerTitle="Settings" id="Wyk-3t-vst" userLabel="Other settings">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationLevel="-1" indentationWidth="10" id="rWm-my-lNb" userLabel="Brightness cell">
-                                        <rect key="frame" x="0.0" y="464.5" width="704" height="51"/>
+                                        <rect key="frame" x="0.0" y="478.5" width="704" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rWm-my-lNb" id="cXH-n7-QVq">
                                             <rect key="frame" x="0.0" y="0.0" width="704" height="51"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7JD-79-r7H">
-                                                    <rect key="frame" x="40" y="0.0" width="628" height="31"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7JD-79-r7H">
+                                                    <rect key="frame" x="40" y="10" width="628" height="31"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maximum brightness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jq-rr-DYt" userLabel="Brightness label">
-                                                            <rect key="frame" x="0.0" y="10.5" width="571" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="5.5" width="571" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -288,9 +288,42 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="7JD-79-r7H" firstAttribute="trailing" secondItem="cXH-n7-QVq" secondAttribute="trailingMargin" constant="-20" id="CVj-pR-Dgz"/>
-                                                <constraint firstItem="7JD-79-r7H" firstAttribute="top" secondItem="cXH-n7-QVq" secondAttribute="top" id="RVC-xU-dGq"/>
-                                                <constraint firstAttribute="bottom" secondItem="7JD-79-r7H" secondAttribute="bottom" constant="20" symbolic="YES" id="Twh-SI-JVY"/>
+                                                <constraint firstItem="7JD-79-r7H" firstAttribute="top" secondItem="cXH-n7-QVq" secondAttribute="top" constant="10" id="RVC-xU-dGq"/>
+                                                <constraint firstItem="7JD-79-r7H" firstAttribute="bottom" secondItem="cXH-n7-QVq" secondAttribute="bottom" constant="-10" id="Twh-SI-JVY"/>
                                                 <constraint firstItem="7JD-79-r7H" firstAttribute="leading" secondItem="cXH-n7-QVq" secondAttribute="leadingMargin" constant="20" id="cVO-Bk-acn"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationLevel="-1" indentationWidth="10" id="KJv-9V-415" userLabel="Require Unlock cell">
+                                        <rect key="frame" x="0.0" y="529.5" width="704" height="51"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KJv-9V-415" id="zHD-Y0-Tpb">
+                                            <rect key="frame" x="0.0" y="0.0" width="704" height="51"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WHi-Q9-ASm">
+                                                    <rect key="frame" x="40" y="10" width="628" height="31"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Require unlock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Fe-nd-gFf" userLabel="Require Unlock label">
+                                                            <rect key="frame" x="0.0" y="5.5" width="571" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PWi-Ke-c2G" userLabel="Require Unlock switch">
+                                                            <rect key="frame" x="579" y="0.0" width="51" height="31"/>
+                                                            <connections>
+                                                                <action selector="requireUnlockChanged:forEvent:" destination="a5X-e2-iJz" eventType="valueChanged" id="sxz-Hl-hhs"/>
+                                                            </connections>
+                                                        </switch>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="WHi-Q9-ASm" firstAttribute="top" secondItem="zHD-Y0-Tpb" secondAttribute="top" constant="10" id="2p6-Gt-qLq"/>
+                                                <constraint firstItem="WHi-Q9-ASm" firstAttribute="leading" secondItem="zHD-Y0-Tpb" secondAttribute="leadingMargin" constant="20" id="5qA-O1-6xw"/>
+                                                <constraint firstItem="WHi-Q9-ASm" firstAttribute="bottom" secondItem="zHD-Y0-Tpb" secondAttribute="bottom" constant="-10" id="F6E-DF-Zr6"/>
+                                                <constraint firstItem="WHi-Q9-ASm" firstAttribute="trailing" secondItem="zHD-Y0-Tpb" secondAttribute="trailingMargin" constant="-20" id="zOH-BN-SDe"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -299,7 +332,7 @@
                             <tableViewSection headerTitle="About" id="7ee-O8-HQx" userLabel="About">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Pzb-BC-xb0" userLabel="About Vax Card">
-                                        <rect key="frame" x="0.0" y="565.5" width="704" height="123"/>
+                                        <rect key="frame" x="0.0" y="630.5" width="704" height="123"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pzb-BC-xb0" id="nPU-q3-GG4">
                                             <rect key="frame" x="0.0" y="0.0" width="704" height="123"/>
@@ -350,7 +383,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="wLO-2R-TUQ" userLabel="&quot;third-party libraries&quot;">
-                                        <rect key="frame" x="0.0" y="688.5" width="704" height="57"/>
+                                        <rect key="frame" x="0.0" y="753.5" width="704" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wLO-2R-TUQ" id="euY-zQ-Zla">
                                             <rect key="frame" x="0.0" y="0.0" width="704" height="57"/>
@@ -372,7 +405,7 @@ Cg
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="10" id="RLr-Kt-xgl" userLabel="License: BrightnessToggle">
-                                        <rect key="frame" x="0.0" y="745.5" width="704" height="365.5"/>
+                                        <rect key="frame" x="0.0" y="810.5" width="704" height="365.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RLr-Kt-xgl" id="tXQ-rR-feZ">
                                             <rect key="frame" x="0.0" y="0.0" width="704" height="365.5"/>
@@ -425,7 +458,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="2" indentationWidth="10" id="z9x-au-qtZ" userLabel="License: UIView borders">
-                                        <rect key="frame" x="0.0" y="1111" width="704" height="148.5"/>
+                                        <rect key="frame" x="0.0" y="1176" width="704" height="148.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z9x-au-qtZ" id="qwf-ld-cRY">
                                             <rect key="frame" x="0.0" y="0.0" width="704" height="148.5"/>
@@ -475,7 +508,7 @@ https://spin.atomicobject.com/2017/07/18/swift-interface-builder</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="2" indentationWidth="10" id="Pqq-3l-BBh" userLabel="License: UIBarButtonItem visibility">
-                                        <rect key="frame" x="0.0" y="1259.5" width="704" height="148.5"/>
+                                        <rect key="frame" x="0.0" y="1324.5" width="704" height="148.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pqq-3l-BBh" id="FUa-6E-hDk">
                                             <rect key="frame" x="0.0" y="0.0" width="704" height="148.5"/>
@@ -543,6 +576,8 @@ https://spin.atomicobject.com/2018/03/15/extend-uibarbuttonitem</string>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="brightnessSwitch" destination="rr1-3Q-wjh" id="pXB-Fl-ZPI"/>
+                        <outlet property="requireUnlockLabel" destination="9Fe-nd-gFf" id="Gaf-0E-yyk"/>
+                        <outlet property="requireUnlockSwitch" destination="PWi-Ke-c2G" id="U1y-6H-iY4"/>
                         <outlet property="toolbar" destination="9PC-hB-0oj" id="jgW-sW-Lf3"/>
                         <outletCollection property="imageViews" destination="iYz-Fp-D69" collectionClass="NSMutableArray" id="YRX-qt-Ew4"/>
                         <outletCollection property="imageViews" destination="4oq-Nb-zhJ" collectionClass="NSMutableArray" id="hg8-gS-Nqa"/>
