@@ -112,8 +112,21 @@ class SettingsViewController: UITableViewController {
     }
 
     @IBAction func requireUnlockChanged(_ sender: UISwitch, forEvent event: UIEvent) {
-        if AppSettings.requireUnlock != sender.isOn {
-            AppSettings.requireUnlock = sender.isOn
+        guard AppSettings.requireUnlock != sender.isOn else {
+            return
+        }
+
+        if sender.isOn {
+            lockManager.requestUnlock { result in
+                switch result {
+                    case .succeeded:
+                        AppSettings.requireUnlock = true
+                    case .failed:
+                        sender.setOn(false, animated: true)
+                }
+            }
+        } else {
+            AppSettings.requireUnlock = false
         }
     }
 
