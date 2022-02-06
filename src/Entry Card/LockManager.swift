@@ -13,6 +13,8 @@ class LockManager {
         case failed
     }
 
+    public static let shared = LockManager()
+
     func requestUnlock(completion: @escaping (UnlockResult) -> Void) {
         let queue = OperationQueue.current!
 

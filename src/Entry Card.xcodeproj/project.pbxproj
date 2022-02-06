@@ -13,6 +13,9 @@
 		DF49F32326830A4200B7090A /* ImageViewWithPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF49F32226830A4200B7090A /* ImageViewWithPlaceholder.swift */; };
 		DF82A7F527AE541B0021EB84 /* LockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF82A7F427AE541B0021EB84 /* LockManager.swift */; };
 		DF909F5B26B5D69100BB927C /* UIBarButtonItem visibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF909F5A26B5D69100BB927C /* UIBarButtonItem visibility.swift */; };
+		DF945D5127AF62D00019DABA /* LockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF945D5027AF62D00019DABA /* LockViewController.swift */; };
+		DF945D5327AF63840019DABA /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF945D5227AF63840019DABA /* RootViewController.swift */; };
+		DF945D5527B2576C0019DABA /* ChildVCSwapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF945D5427B2576C0019DABA /* ChildVCSwapper.swift */; };
 		DFA4E5A92680971D00095F77 /* Asset identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA4E5A82680971D00095F77 /* Asset identifiers.swift */; };
 		DFB8F9BA267F298D00D2AAFD /* LoadedPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB8F9B9267F298D00D2AAFD /* LoadedPictureView.swift */; };
 		DFB8F9BC267F29B100D2AAFD /* LoadedPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB8F9BB267F29B100D2AAFD /* LoadedPictureViewController.swift */; };
@@ -37,6 +40,9 @@
 		DF49F32226830A4200B7090A /* ImageViewWithPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewWithPlaceholder.swift; sourceTree = "<group>"; };
 		DF82A7F427AE541B0021EB84 /* LockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockManager.swift; sourceTree = "<group>"; };
 		DF909F5A26B5D69100BB927C /* UIBarButtonItem visibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem visibility.swift"; sourceTree = "<group>"; };
+		DF945D5027AF62D00019DABA /* LockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockViewController.swift; sourceTree = "<group>"; };
+		DF945D5227AF63840019DABA /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		DF945D5427B2576C0019DABA /* ChildVCSwapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildVCSwapper.swift; sourceTree = "<group>"; };
 		DFA4E5A82680971D00095F77 /* Asset identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Asset identifiers.swift"; sourceTree = "<group>"; };
 		DFB8F9B9267F298D00D2AAFD /* LoadedPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadedPictureView.swift; sourceTree = "<group>"; };
 		DFB8F9BB267F29B100D2AAFD /* LoadedPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadedPictureViewController.swift; sourceTree = "<group>"; };
@@ -98,12 +104,15 @@
 				DFDD5165267D97A60037CD5E /* AppDelegate.swift */,
 				DFB8F9BD26807AB800D2AAFD /* AppSettings.swift */,
 				DFA4E5A82680971D00095F77 /* Asset identifiers.swift */,
+				DF945D5427B2576C0019DABA /* ChildVCSwapper.swift */,
 				DF49F32226830A4200B7090A /* ImageViewWithPlaceholder.swift */,
 				DF35308B272493A60085584D /* LoadedPicture.swift */,
 				DFB8F9B9267F298D00D2AAFD /* LoadedPictureView.swift */,
 				DFB8F9BB267F29B100D2AAFD /* LoadedPictureViewController.swift */,
 				DF82A7F427AE541B0021EB84 /* LockManager.swift */,
+				DF945D5027AF62D00019DABA /* LockViewController.swift */,
 				DFDD5169267D97A60037CD5E /* MainViewController.swift */,
+				DF945D5227AF63840019DABA /* RootViewController.swift */,
 				DFB8F9BF2680841700D2AAFD /* SettingsViewController.swift */,
 				DF38BF7B2680C249000ABC8F /* StorageManager.swift */,
 				DF353089272490220085584D /* StoredPicture.swift */,
@@ -245,6 +254,7 @@
 				DFB8F9BC267F29B100D2AAFD /* LoadedPictureViewController.swift in Sources */,
 				DFDD516A267D97A60037CD5E /* MainViewController.swift in Sources */,
 				DF909F5B26B5D69100BB927C /* UIBarButtonItem visibility.swift in Sources */,
+				DF945D5527B2576C0019DABA /* ChildVCSwapper.swift in Sources */,
 				DFDD517A267DC4F30037CD5E /* Storyboard identifiers.swift in Sources */,
 				DFB8F9BE26807AB800D2AAFD /* AppSettings.swift in Sources */,
 				DFB8F9BA267F298D00D2AAFD /* LoadedPictureView.swift in Sources */,
@@ -252,6 +262,8 @@
 				DFDD5166267D97A60037CD5E /* AppDelegate.swift in Sources */,
 				DFB8F9C226808FB200D2AAFD /* UIView borders.swift in Sources */,
 				DFA4E5A92680971D00095F77 /* Asset identifiers.swift in Sources */,
+				DF945D5327AF63840019DABA /* RootViewController.swift in Sources */,
+				DF945D5127AF62D00019DABA /* LockViewController.swift in Sources */,
 				DF82A7F527AE541B0021EB84 /* LockManager.swift in Sources */,
 				DFB8F9C02680841700D2AAFD /* SettingsViewController.swift in Sources */,
 				DF49F32326830A4200B7090A /* ImageViewWithPlaceholder.swift in Sources */,

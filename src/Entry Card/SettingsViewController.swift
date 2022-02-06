@@ -22,14 +22,13 @@ class SettingsViewController: UITableViewController {
     private let borderColor = UIColor(named: Colors.tableViewBorder)
 
     private var loadedPictures: [LoadedPicture?] = []
-    private let lockManager = LockManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         brightnessSwitch.setOn(AppSettings.useMaximumBrightness, animated: false)
 
-        if lockManager.available {
+        if LockManager.shared.available {
             requireUnlockLabel.isEnabled = true
             requireUnlockSwitch.isEnabled = true
             requireUnlockSwitch.setOn(AppSettings.requireUnlock, animated: false)
@@ -117,7 +116,7 @@ class SettingsViewController: UITableViewController {
         }
 
         if sender.isOn {
-            lockManager.requestUnlock { result in
+            LockManager.shared.requestUnlock { result in
                 switch result {
                     case .succeeded:
                         AppSettings.requireUnlock = true

@@ -6,7 +6,9 @@
 import UIKit
 import BrightnessToggle
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, HasStoryboardID {
+
+    static var storyboardID: String { Storyboard.mainScreenViewController }
 
     override func viewDidLoad() {
         super.viewDidLoad()
