@@ -14,10 +14,12 @@ class LockViewController: UIViewController, HasStoryboardID {
     @IBOutlet weak var tapLabel: UILabel!
     @IBOutlet weak var tapGesture: UITapGestureRecognizer!
 
+    var alwaysShowTap = false
+
     override func viewWillAppear(_ animated: Bool) {
         if !LockManager.shared.available {
             unlock()
-        } else if LockManager.shared.faceAvailable {
+        } else if LockManager.shared.faceAvailable || alwaysShowTap {
             showTap()
         } else {
             hideTap()

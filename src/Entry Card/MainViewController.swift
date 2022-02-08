@@ -29,6 +29,15 @@ class MainViewController: UIViewController, HasStoryboardID {
         viewHasAppeared = true
     }
 
+    override func willMove(toParent parent: UIViewController?) {
+        super.willMove(toParent: parent)
+
+        if parent == nil && presentedViewController != nil {
+            // No segues, no animations - we need this gone, right now!
+            dismiss(animated: false, completion: nil)
+        }
+    }
+
     @IBAction func presentedViewControllerDismissed(unwindSegue: UIStoryboardSegue) {
 
     }

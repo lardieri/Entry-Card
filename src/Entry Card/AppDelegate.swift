@@ -33,6 +33,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         BrightnessToggle.applicationWillEnterForeground()
     }
 
+    func applicationDidEnterBackground(_ application: UIApplication) {
+
+        if LockManager.shared.available && AppSettings.requireUnlock {
+            if let rootVC = window?.rootViewController as? RootViewController {
+                rootVC.lockImmediately()
+            }
+        }
+    }
+
     private func lockUI(_: Notification) {
         if let rootVC = window?.rootViewController as? RootViewController {
             rootVC.lockUI()
