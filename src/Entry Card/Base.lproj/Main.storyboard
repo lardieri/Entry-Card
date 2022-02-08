@@ -718,7 +718,7 @@ https://spin.atomicobject.com/2018/03/15/extend-uibarbuttonitem</string>
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="196"/>
                                         <color key="tintColor" systemColor="labelColor"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to unlock" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VdG-8U-nyf">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to unlock" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VdG-8U-nyf">
                                         <rect key="frame" x="0.0" y="236" width="160" height="48"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
                                         <nil key="textColor"/>
@@ -740,6 +740,10 @@ https://spin.atomicobject.com/2018/03/15/extend-uibarbuttonitem</string>
                             <outletCollection property="gestureRecognizers" destination="u13-E7-Ped" appends="YES" id="7K2-MZ-gem"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="tapGesture" destination="u13-E7-Ped" id="bzV-Fk-azj"/>
+                        <outlet property="tapLabel" destination="VdG-8U-nyf" id="oxE-SU-GAy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JDH-Us-XjT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="u13-E7-Ped">

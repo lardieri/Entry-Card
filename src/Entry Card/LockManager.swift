@@ -43,6 +43,10 @@ class LockManager {
         return context.canEvaluatePolicy(policy, error: nil)
     }
 
+    var faceAvailable: Bool {
+        return context.canEvaluatePolicy(policy, error: nil) && context.biometryType == .faceID
+    }
+
     // Yes, crash if we can't find it. That way we know if we're missing the FaceID string, even when we test on a TouchID device.
     private static let reason = Bundle.main.object(forInfoDictionaryKey: "NSFaceIDUsageDescription") as! String
 
