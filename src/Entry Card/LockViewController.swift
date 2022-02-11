@@ -38,18 +38,16 @@ class LockViewController: UIViewController, HasStoryboardID {
     }
 
     private func request() {
-        OperationQueue.main.addOperation {
-            LockManager.shared.requestUnlock { [weak self] result in
-                guard let self = self else { return }
+        LockManager.shared.requestUnlock { [weak self] result in
+            guard let self = self else { return }
 
-                switch result {
-                    case .succeeded:
-                        self.unlock()
+            switch result {
+                case .succeeded:
+                    self.unlock()
 
-                    case .failed:
-                        self.showTap()
-                        return
-                }
+                case .failed:
+                    self.showTap()
+                    return
             }
         }
     }
@@ -63,7 +61,7 @@ class LockViewController: UIViewController, HasStoryboardID {
 
     private func showTap() {
         tapGesture.isEnabled = true
-        UIView.animate(withDuration: 0.5) { [weak self] in
+        UIView.animate(withDuration: fadeTime) { [weak self] in
             self?.tapLabel.alpha = 1.0
         }
     }

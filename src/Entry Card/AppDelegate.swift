@@ -34,7 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-
         if LockManager.shared.available && AppSettings.requireUnlock {
             if let rootVC = window?.rootViewController as? RootViewController {
                 rootVC.lockImmediately()
