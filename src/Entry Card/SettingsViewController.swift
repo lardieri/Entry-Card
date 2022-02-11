@@ -6,6 +6,15 @@
 import UIKit
 import UniformTypeIdentifiers
 
+fileprivate enum AppIcons {
+
+    static let gray = "AppIcon-VelvetRopeGray"
+    static let vax = "AppIcon-VaxCard"
+    static let vip = "AppIcon-VIP"
+
+}
+
+
 class SettingsViewController: UITableViewController {
 
     @IBOutlet weak var toolbar: UIToolbar!
@@ -17,11 +26,34 @@ class SettingsViewController: UITableViewController {
     @IBOutlet var addImageButtons: [UIBarButtonItem]! { didSet { addImageButtons.sort { $0.tag < $1.tag } } }
     @IBOutlet var removeImageButtons: [UIBarButtonItem]! { didSet { removeImageButtons.sort { $0.tag < $1.tag } } }
     @IBOutlet var rotateImageButtons: [UIBarButtonItem]! { didSet { rotateImageButtons.sort { $0.tag < $1.tag } } }
+    @IBOutlet var iconButtons: [UIImageView]! { didSet { iconButtons.sort { $0.tag < $1.tag } } }
 
     private let borderViewTag = 314159
     private let borderColor = UIColor(named: Colors.tableViewBorder)
 
     private var loadedPictures: [LoadedPicture?] = []
+
+    @IBAction func iconTapped(_ sender: UITapGestureRecognizer) {
+        let iconNames: [Int : String?] = [
+            1: nil,
+            2: AppIcons.gray,
+            3: AppIcons.vax,
+            4: AppIcons.vip
+        ]
+
+        guard let tag = sender.view?.tag,
+              let name = iconNames[tag]
+        else { return }
+
+        UIApplication.shared.setAlternateIconName(name) { error in
+            if let error = error {
+                print("Error changing app icon: \(error.localizedDescription)")
+            } else {
+                print("Successfully changed app icon")
+            }
+        }
+
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
