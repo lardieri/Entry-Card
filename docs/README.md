@@ -8,11 +8,12 @@ Gets you in the door faster at your favorite restaurant, club, or gym!
 
 ## How to use
 
-1. Take a picture of your entry/VIP card, or select a picture you've already taken.
+1. Take a picture of your vaccination, membership, or VIP card.  
+   Or, use a picture or PDF scan from your photo album or favorite cloud file service.
 
 2. Go out.
 
-3. When the bouncer asks to see a picture of your card, just tap the app.
+3. When the bouncer asks to see your card, just tap the app.
 
 **Your card comes up right away, at full brightness!**
 
