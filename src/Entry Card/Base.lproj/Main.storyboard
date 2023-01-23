@@ -24,7 +24,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5j9-38-X20" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-618" y="283"/>
+            <point key="canvasLocation" x="-618" y="33"/>
         </scene>
         <!--Main Screen-->
         <scene sceneID="tne-QT-ifu">
@@ -84,7 +84,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="XgN-5g-00r" kind="presentation" identifier="Present Settings segue" id="XSz-EO-yfS"/>
+                                    <segue destination="hvS-W8-7dm" kind="presentation" identifier="Present Settings segue" id="jCI-OF-07i"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -115,7 +115,7 @@
                 <navigationController title="Settings Nav" automaticallyAdjustsScrollViewInsets="NO" id="XgN-5g-00r" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="f9P-Bp-O7P">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -125,14 +125,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7LT-5F-hpg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="935" y="-410"/>
+            <point key="canvasLocation" x="894" y="-1241"/>
         </scene>
         <!--Settings-->
         <scene sceneID="l3o-Au-oxa">
             <objects>
                 <tableViewController title="Settings" id="a5X-e2-iJz" customClass="SettingsViewController" customModule="Entry_Card" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="UiT-jA-Pzx">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
@@ -278,7 +278,7 @@
                             <tableViewSection headerTitle="Settings" id="Wyk-3t-vst" userLabel="Other settings">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationLevel="-1" indentationWidth="10" id="rWm-my-lNb" userLabel="Brightness cell">
-                                        <rect key="frame" x="0.0" y="348.9999942779541" width="428" height="51"/>
+                                        <rect key="frame" x="0.0" y="348.99999427795404" width="428" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rWm-my-lNb" id="cXH-n7-QVq">
                                             <rect key="frame" x="0.0" y="0.0" width="428" height="51"/>
@@ -311,7 +311,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationLevel="-1" indentationWidth="10" id="KJv-9V-415" userLabel="Require Unlock cell">
-                                        <rect key="frame" x="0.0" y="399.9999942779541" width="428" height="51"/>
+                                        <rect key="frame" x="0.0" y="399.99999427795404" width="428" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KJv-9V-415" id="zHD-Y0-Tpb">
                                             <rect key="frame" x="0.0" y="0.0" width="428" height="51"/>
@@ -344,7 +344,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationLevel="-1" indentationWidth="10" id="31o-AI-1Lk" userLabel="App Icon cell">
-                                        <rect key="frame" x="0.0" y="450.9999942779541" width="428" height="110.33333587646484"/>
+                                        <rect key="frame" x="0.0" y="450.99999427795404" width="428" height="110.3333358764649"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="31o-AI-1Lk" id="jRM-t5-pt1">
                                             <rect key="frame" x="0.0" y="0.0" width="428" height="110.33333587646484"/>
@@ -725,7 +725,15 @@ https://spin.atomicobject.com/2018/03/15/extend-uibarbuttonitem</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1723" y="-410"/>
+            <point key="canvasLocation" x="1705" y="-1241"/>
+        </scene>
+        <!--Settings Host-->
+        <scene sceneID="ldN-f0-tBz">
+            <objects>
+                <hostingController storyboardIdentifier="Settings Host" title="Settings Host" id="hvS-W8-7dm" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="56T-U1-pCG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="935" y="-511"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="yYh-Gc-5dE">
@@ -752,11 +760,11 @@ https://spin.atomicobject.com/2018/03/15/extend-uibarbuttonitem</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E7t-Vg-Xrx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="2ib-1I-XAk">
                     <connections>
-                        <segue destination="XgN-5g-00r" kind="presentation" id="kV3-5Q-nnZ"/>
+                        <segue destination="hvS-W8-7dm" kind="presentation" id="dTY-m5-CqJ"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="935" y="926"/>
+            <point key="canvasLocation" x="132" y="-728"/>
         </scene>
         <!--Loaded Picture View Controller-->
         <scene sceneID="Yjl-sd-R8v">
@@ -850,11 +858,11 @@ https://spin.atomicobject.com/2018/03/15/extend-uibarbuttonitem</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="132" y="675"/>
+            <point key="canvasLocation" x="-618" y="-728"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="XSz-EO-yfS"/>
+        <segue reference="jCI-OF-07i"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Empty Picture" width="100" height="100"/>
