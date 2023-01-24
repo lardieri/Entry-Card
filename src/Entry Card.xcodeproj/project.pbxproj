@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF1A88B1297F507D008A187C /* Settings Host.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A88B0297F507D008A187C /* Settings Host.swift */; };
 		DF1F33722988FC25004692B4 /* BrightnessToggle in Frameworks */ = {isa = PBXBuildFile; productRef = DF1F33712988FC25004692B4 /* BrightnessToggle */; };
 		DF35308A272490220085584D /* StoredPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF353089272490220085584D /* StoredPicture.swift */; };
 		DF35308C272493A60085584D /* LoadedPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF35308B272493A60085584D /* LoadedPicture.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF1A88B0297F507D008A187C /* Settings Host.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings Host.swift"; sourceTree = "<group>"; };
 		DF353089272490220085584D /* StoredPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredPicture.swift; sourceTree = "<group>"; };
 		DF35308B272493A60085584D /* LoadedPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadedPicture.swift; sourceTree = "<group>"; };
 		DF38BF7B2680C249000ABC8F /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -69,6 +71,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF1A88AF297F5057008A187C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DF1A88B0297F507D008A187C /* Settings Host.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		DFDD5159267D97A60037CD5E = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +98,7 @@
 		DFDD5164267D97A60037CD5E /* Entry Card */ = {
 			isa = PBXGroup;
 			children = (
+				DF1A88AF297F5057008A187C /* Views */,
 				DFDD5165267D97A60037CD5E /* AppDelegate.swift */,
 				DFB8F9BD26807AB800D2AAFD /* AppSettings.swift */,
 				DFA4E5A82680971D00095F77 /* Asset identifiers.swift */,
@@ -195,6 +206,7 @@
 				DFDD516A267D97A60037CD5E /* MainViewController.swift in Sources */,
 				DF909F5B26B5D69100BB927C /* UIBarButtonItem visibility.swift in Sources */,
 				DF945D5527B2576C0019DABA /* ChildVCSwapper.swift in Sources */,
+				DF1A88B1297F507D008A187C /* Settings Host.swift in Sources */,
 				DFDD517A267DC4F30037CD5E /* Storyboard identifiers.swift in Sources */,
 				DFB8F9BE26807AB800D2AAFD /* AppSettings.swift in Sources */,
 				DFB8F9BA267F298D00D2AAFD /* LoadedPictureView.swift in Sources */,
