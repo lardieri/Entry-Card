@@ -22,7 +22,7 @@ struct Settings_Host: View {
                 }
                 .tag(2)
 
-            Text("About")
+            AboutTab()
                 .tabItem {
                     Image(systemName: "info.circle")
                     Text("About")
