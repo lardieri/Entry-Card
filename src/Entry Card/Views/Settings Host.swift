@@ -15,7 +15,7 @@ struct SettingsHost: View {
                 }
                 .tag(1)
 
-            Text("Settings")
+            SettingsTab()
                 .tabItem {
                     Image(systemName: "gearshape")
                     Text("Settings")
