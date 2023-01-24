@@ -15,6 +15,7 @@
 		DF1A88BB297F5EAA008A187C /* About tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A88BA297F5EAA008A187C /* About tab.swift */; };
 		DF1A88BD297F730A008A187C /* Third Party Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A88BC297F730A008A187C /* Third Party Credits.swift */; };
 		DF1F33722988FC25004692B4 /* BrightnessToggle in Frameworks */ = {isa = PBXBuildFile; productRef = DF1F33712988FC25004692B4 /* BrightnessToggle */; };
+		DF1A88BF297FA05D008A187C /* SettingsHostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A88BE297FA05D008A187C /* SettingsHostViewController.swift */; };
 		DF35308A272490220085584D /* StoredPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF353089272490220085584D /* StoredPicture.swift */; };
 		DF35308C272493A60085584D /* LoadedPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF35308B272493A60085584D /* LoadedPicture.swift */; };
 		DF38BF7C2680C249000ABC8F /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38BF7B2680C249000ABC8F /* StorageManager.swift */; };
@@ -46,6 +47,7 @@
 		DF1A88B8297F5C2A008A187C /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		DF1A88BA297F5EAA008A187C /* About tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "About tab.swift"; sourceTree = "<group>"; };
 		DF1A88BC297F730A008A187C /* Third Party Credits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Third Party Credits.swift"; sourceTree = "<group>"; };
+		DF1A88BE297FA05D008A187C /* SettingsHostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHostViewController.swift; sourceTree = "<group>"; };
 		DF353089272490220085584D /* StoredPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredPicture.swift; sourceTree = "<group>"; };
 		DF35308B272493A60085584D /* LoadedPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadedPicture.swift; sourceTree = "<group>"; };
 		DF38BF7B2680C249000ABC8F /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				DFDD5170267D97A80037CD5E /* LaunchScreen.storyboard */,
 				DFDD516B267D97A60037CD5E /* Main.storyboard */,
 				DFDD5173267D97A80037CD5E /* Info.plist */,
+				DF1A88BE297FA05D008A187C /* SettingsHostViewController.swift */,
 			);
 			path = "Entry Card";
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				DF1A88B3297F5B85008A187C /* Third Party - BrightnessToggle.swift in Sources */,
 				DF1A88BD297F730A008A187C /* Third Party Credits.swift in Sources */,
 				DFDD5166267D97A60037CD5E /* AppDelegate.swift in Sources */,
+				DF1A88BF297FA05D008A187C /* SettingsHostViewController.swift in Sources */,
 				DFB8F9C226808FB200D2AAFD /* UIView borders.swift in Sources */,
 				DFA4E5A92680971D00095F77 /* Asset identifiers.swift in Sources */,
 				DF945D5327AF63840019DABA /* RootViewController.swift in Sources */,

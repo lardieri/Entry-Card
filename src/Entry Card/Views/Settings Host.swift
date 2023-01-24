@@ -5,7 +5,7 @@
 
 import SwiftUI
 
-struct Settings_Host: View {
+struct SettingsHost: View {
     var body: some View {
         TabView {
             Text("Pictures")
@@ -32,8 +32,8 @@ struct Settings_Host: View {
     }
 }
 
-struct Settings_Host_Previews: PreviewProvider {
+struct SettingsHost_Previews: PreviewProvider {
     static var previews: some View {
-        Settings_Host()
+        SettingsHost()
     }
 }
