@@ -8,7 +8,7 @@ import SwiftUI
 struct SettingsHost: View {
     var body: some View {
         TabView {
-            Text("Pictures")
+            PicturesTab()
                 .tabItem {
                     Image(systemName: "photo")
                     Text("Pictures")

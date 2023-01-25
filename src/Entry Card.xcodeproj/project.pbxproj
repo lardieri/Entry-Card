@@ -17,6 +17,8 @@
 		DF1F33722988FC25004692B4 /* BrightnessToggle in Frameworks */ = {isa = PBXBuildFile; productRef = DF1F33712988FC25004692B4 /* BrightnessToggle */; };
 		DF1A88BF297FA05D008A187C /* SettingsHostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A88BE297FA05D008A187C /* SettingsHostViewController.swift */; };
 		DF1A88C1297FA328008A187C /* Settings tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A88C0297FA328008A187C /* Settings tab.swift */; };
+		DF1A88C52980BA05008A187C /* Pictures tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A88C42980BA05008A187C /* Pictures tab.swift */; };
+		DF1A88C72980BAC2008A187C /* Picture Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A88C62980BAC2008A187C /* Picture Picker.swift */; };
 		DF35308A272490220085584D /* StoredPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF353089272490220085584D /* StoredPicture.swift */; };
 		DF35308C272493A60085584D /* LoadedPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF35308B272493A60085584D /* LoadedPicture.swift */; };
 		DF38BF7C2680C249000ABC8F /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38BF7B2680C249000ABC8F /* StorageManager.swift */; };
@@ -50,6 +52,8 @@
 		DF1A88BC297F730A008A187C /* Third Party Credits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Third Party Credits.swift"; sourceTree = "<group>"; };
 		DF1A88BE297FA05D008A187C /* SettingsHostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHostViewController.swift; sourceTree = "<group>"; };
 		DF1A88C0297FA328008A187C /* Settings tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings tab.swift"; sourceTree = "<group>"; };
+		DF1A88C42980BA05008A187C /* Pictures tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pictures tab.swift"; sourceTree = "<group>"; };
+		DF1A88C62980BAC2008A187C /* Picture Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Picture Picker.swift"; sourceTree = "<group>"; };
 		DF353089272490220085584D /* StoredPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredPicture.swift; sourceTree = "<group>"; };
 		DF35308B272493A60085584D /* LoadedPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadedPicture.swift; sourceTree = "<group>"; };
 		DF38BF7B2680C249000ABC8F /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -92,6 +96,8 @@
 			children = (
 				DF1A88B8297F5C2A008A187C /* About.swift */,
 				DF1A88BA297F5EAA008A187C /* About tab.swift */,
+				DF1A88C62980BAC2008A187C /* Picture Picker.swift */,
+				DF1A88C42980BA05008A187C /* Pictures tab.swift */,
 				DF1A88B0297F507D008A187C /* Settings Host.swift */,
 				DF1A88C0297FA328008A187C /* Settings tab.swift */,
 				DF1A88BC297F730A008A187C /* Third Party Credits.swift */,
@@ -244,6 +250,7 @@
 				DFA4E5A92680971D00095F77 /* Asset identifiers.swift in Sources */,
 				DF945D5327AF63840019DABA /* RootViewController.swift in Sources */,
 				DF945D5127AF62D00019DABA /* LockViewController.swift in Sources */,
+				DF1A88C52980BA05008A187C /* Pictures tab.swift in Sources */,
 				DF1A88B9297F5C2A008A187C /* About.swift in Sources */,
 				DF82A7F527AE541B0021EB84 /* LockManager.swift in Sources */,
 				DF1A88B5297F5B9E008A187C /* Third Party - UIView borders.swift in Sources */,
@@ -252,6 +259,7 @@
 				DF1A88C1297FA328008A187C /* Settings tab.swift in Sources */,
 				DF49F32326830A4200B7090A /* ImageViewWithPlaceholder.swift in Sources */,
 				DF38BF7C2680C249000ABC8F /* StorageManager.swift in Sources */,
+				DF1A88C72980BAC2008A187C /* Picture Picker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
