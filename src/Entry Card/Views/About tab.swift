@@ -19,13 +19,21 @@ struct AboutTab: View {
             }
 
             Section {
-                DisclosureGroup("Third Party Credits") {
-                    ThirdPartyCredits()
-                }
-                .listRowSeparator(.hidden)
+                DisclosureGroup(
+                    content: {
+                        ThirdPartyCredits()
+                    },
+
+                    label: {
+                        Text("Third Party Credits")
+                            .font(.callout.smallCaps())
+
+                    }
+                )
+                    .listRowSeparator(.hidden)
             }
         }
-        .listStyle(.insetGrouped)
+        .listStyle(.inset)
 
     }
 }
