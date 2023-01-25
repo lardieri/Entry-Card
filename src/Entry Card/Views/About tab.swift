@@ -2,10 +2,11 @@
 //  About tab.swift
 //  Entry Card
 //
-//  Created by Stephen Lardieri on 1/23/2023.
-//
 
 import SwiftUI
+
+// From UIKit's readable layout guide. No official equivalent in SwiftUI.
+fileprivate let maxReadableWidth: CGFloat = 672.0
 
 struct AboutTab: View {
     var body: some View {
@@ -34,6 +35,7 @@ struct AboutTab: View {
             }
         }
         .listStyle(.inset)
+        .frame(maxWidth: maxReadableWidth, alignment: .center)
 
     }
 }

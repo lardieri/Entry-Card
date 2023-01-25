@@ -5,6 +5,9 @@
 
 import SwiftUI
 
+// From UIKit's readable layout guide. No official equivalent in SwiftUI.
+fileprivate let maxReadableWidth: CGFloat = 672.0
+
 fileprivate struct Icon: Identifiable {
     let imageName: String
     let assetName: String?
@@ -48,6 +51,7 @@ struct SettingsTab: View {
             .listSectionSeparator(.hidden)
         }
         .listStyle(.inset)
+        .frame(maxWidth: maxReadableWidth, alignment: .center)
     }
 }
 
