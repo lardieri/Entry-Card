@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF1F33722988FC25004692B4 /* BrightnessToggle in Frameworks */ = {isa = PBXBuildFile; productRef = DF1F33712988FC25004692B4 /* BrightnessToggle */; };
 		DF35308A272490220085584D /* StoredPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF353089272490220085584D /* StoredPicture.swift */; };
 		DF35308C272493A60085584D /* LoadedPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF35308B272493A60085584D /* LoadedPicture.swift */; };
 		DF38BF7C2680C249000ABC8F /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38BF7B2680C249000ABC8F /* StorageManager.swift */; };
@@ -28,12 +29,9 @@
 		DFDD516F267D97A80037CD5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFDD516E267D97A80037CD5E /* Assets.xcassets */; };
 		DFDD5172267D97A80037CD5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFDD5170267D97A80037CD5E /* LaunchScreen.storyboard */; };
 		DFDD517A267DC4F30037CD5E /* Storyboard identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDD5179267DC4F30037CD5E /* Storyboard identifiers.swift */; };
-		E26117985BEDC1A1C3681C39 /* Pods_Entry_Card.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3873AB63810DF2464546F94B /* Pods_Entry_Card.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		18C20FFE59950DDCA0E53356 /* Pods-Entry Card.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Entry Card.release.xcconfig"; path = "Target Support Files/Pods-Entry Card/Pods-Entry Card.release.xcconfig"; sourceTree = "<group>"; };
-		3873AB63810DF2464546F94B /* Pods_Entry_Card.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Entry_Card.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF353089272490220085584D /* StoredPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredPicture.swift; sourceTree = "<group>"; };
 		DF35308B272493A60085584D /* LoadedPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadedPicture.swift; sourceTree = "<group>"; };
 		DF38BF7B2680C249000ABC8F /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -57,7 +55,6 @@
 		DFDD5171267D97A80037CD5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFDD5173267D97A80037CD5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFDD5179267DC4F30037CD5E /* Storyboard identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard identifiers.swift"; sourceTree = "<group>"; };
-		E235C861D42A074CA048F18A /* Pods-Entry Card.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Entry Card.debug.xcconfig"; path = "Target Support Files/Pods-Entry Card/Pods-Entry Card.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,28 +62,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E26117985BEDC1A1C3681C39 /* Pods_Entry_Card.framework in Frameworks */,
+				DF1F33722988FC25004692B4 /* BrightnessToggle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4798F40314AE8ED9326AB3FD /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3873AB63810DF2464546F94B /* Pods_Entry_Card.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		DFDD5159267D97A60037CD5E = {
 			isa = PBXGroup;
 			children = (
 				DFDD5164267D97A60037CD5E /* Entry Card */,
 				DFDD5163267D97A60037CD5E /* Products */,
-				F6BA9AA0FA2303EB9C015393 /* Pods */,
-				4798F40314AE8ED9326AB3FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,15 +114,6 @@
 			path = "Entry Card";
 			sourceTree = "<group>";
 		};
-		F6BA9AA0FA2303EB9C015393 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E235C861D42A074CA048F18A /* Pods-Entry Card.debug.xcconfig */,
-				18C20FFE59950DDCA0E53356 /* Pods-Entry Card.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,17 +121,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DFDD5176267D97A80037CD5E /* Build configuration list for PBXNativeTarget "Entry Card" */;
 			buildPhases = (
-				4E9A965F1A8F1FC021FA3DC4 /* [CP] Check Pods Manifest.lock */,
 				DFDD515E267D97A60037CD5E /* Sources */,
 				DFDD515F267D97A60037CD5E /* Frameworks */,
 				DFDD5160267D97A60037CD5E /* Resources */,
-				6B5079AB61EAB3E66D286A40 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Entry Card";
+			packageProductDependencies = (
+				DF1F33712988FC25004692B4 /* BrightnessToggle */,
+			);
 			productName = "Entry Card";
 			productReference = DFDD5162267D97A60037CD5E /* Entry Card.app */;
 			productType = "com.apple.product-type.application";
@@ -181,6 +160,9 @@
 				Base,
 			);
 			mainGroup = DFDD5159267D97A60037CD5E;
+			packageReferences = (
+				DF1F33702988FC25004692B4 /* XCRemoteSwiftPackageReference "BrightnessToggle" */,
+			);
 			productRefGroup = DFDD5163267D97A60037CD5E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -202,48 +184,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		4E9A965F1A8F1FC021FA3DC4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Entry Card-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6B5079AB61EAB3E66D286A40 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Entry Card/Pods-Entry Card-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Entry Card/Pods-Entry Card-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Entry Card/Pods-Entry Card-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DFDD515E267D97A60037CD5E /* Sources */ = {
@@ -411,7 +351,6 @@
 		};
 		DFDD5177267D97A80037CD5E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E235C861D42A074CA048F18A /* Pods-Entry Card.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -434,7 +373,6 @@
 		};
 		DFDD5178267D97A80037CD5E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 18C20FFE59950DDCA0E53356 /* Pods-Entry Card.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -477,6 +415,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DF1F33702988FC25004692B4 /* XCRemoteSwiftPackageReference "BrightnessToggle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lardieri/BrightnessToggle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DF1F33712988FC25004692B4 /* BrightnessToggle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF1F33702988FC25004692B4 /* XCRemoteSwiftPackageReference "BrightnessToggle" */;
+			productName = BrightnessToggle;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DFDD515A267D97A60037CD5E /* Project object */;
 }

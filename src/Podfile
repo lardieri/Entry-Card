@@ -1,7 +1,0 @@
-platform :ios, '12.3'
-
-target 'Entry Card' do
-  use_frameworks!
-
-  pod 'BrightnessToggle', :git => 'https://github.com/lardieri/BrightnessToggle.git'
-end

@@ -26,7 +26,10 @@ Temporary Items/
 
 
 # Xcode
+.xcodesamplecode.plist
 xcuserdata/
+project.xcworkspace/
+swiftpm/
 
 
 # 3rd party libraries
