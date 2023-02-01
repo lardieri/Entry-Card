@@ -9,6 +9,7 @@ struct ThirdPartyCredits: View {
     var body: some View {
         VStack {
             ThirdParty_BrightnessToggle()
+            ThirdParty_SFSymbolEnum()
             ThirdParty_UIViewBorders()
             ThirdParty_UIBarButtonItem()
         }

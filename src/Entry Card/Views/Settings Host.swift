@@ -4,27 +4,28 @@
 //
 
 import SwiftUI
+import SFSymbolEnum
 
 struct SettingsHost: View {
     var body: some View {
         TabView {
             PicturesTab()
                 .tabItem {
-                    Image(systemName: "photo")
+                    Image(systemName: .photo)
                     Text("Pictures")
                 }
                 .tag(1)
 
             SettingsTab()
                 .tabItem {
-                    Image(systemName: "gearshape")
+                    Image(systemName: .gearshape)
                     Text("Settings")
                 }
                 .tag(2)
 
             AboutTab()
                 .tabItem {
-                    Image(systemName: "info.circle")
+                    Image(systemName: .infoCircle)
                     Text("About")
                 }
                 .tag(3)

@@ -14,11 +14,13 @@
 		DF1A88B9297F5C2A008A187C /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A88B8297F5C2A008A187C /* About.swift */; };
 		DF1A88BB297F5EAA008A187C /* About tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A88BA297F5EAA008A187C /* About tab.swift */; };
 		DF1A88BD297F730A008A187C /* Third Party Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A88BC297F730A008A187C /* Third Party Credits.swift */; };
-		DF1F33722988FC25004692B4 /* BrightnessToggle in Frameworks */ = {isa = PBXBuildFile; productRef = DF1F33712988FC25004692B4 /* BrightnessToggle */; };
 		DF1A88BF297FA05D008A187C /* SettingsHostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A88BE297FA05D008A187C /* SettingsHostViewController.swift */; };
 		DF1A88C1297FA328008A187C /* Settings tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A88C0297FA328008A187C /* Settings tab.swift */; };
 		DF1A88C52980BA05008A187C /* Pictures tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A88C42980BA05008A187C /* Pictures tab.swift */; };
 		DF1A88C72980BAC2008A187C /* Picture Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A88C62980BAC2008A187C /* Picture Picker.swift */; };
+		DF1EE29D2989332100349247 /* SFSymbolEnum in Frameworks */ = {isa = PBXBuildFile; productRef = DF1EE29C2989332100349247 /* SFSymbolEnum */; };
+		DF1EE29F298935A600349247 /* Third Party - SFSymbolEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1EE29E298935A600349247 /* Third Party - SFSymbolEnum.swift */; };
+		DF1F33722988FC25004692B4 /* BrightnessToggle in Frameworks */ = {isa = PBXBuildFile; productRef = DF1F33712988FC25004692B4 /* BrightnessToggle */; };
 		DF35308A272490220085584D /* StoredPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF353089272490220085584D /* StoredPicture.swift */; };
 		DF35308C272493A60085584D /* LoadedPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF35308B272493A60085584D /* LoadedPicture.swift */; };
 		DF38BF7C2680C249000ABC8F /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF38BF7B2680C249000ABC8F /* StorageManager.swift */; };
@@ -54,6 +56,7 @@
 		DF1A88C0297FA328008A187C /* Settings tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings tab.swift"; sourceTree = "<group>"; };
 		DF1A88C42980BA05008A187C /* Pictures tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pictures tab.swift"; sourceTree = "<group>"; };
 		DF1A88C62980BAC2008A187C /* Picture Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Picture Picker.swift"; sourceTree = "<group>"; };
+		DF1EE29E298935A600349247 /* Third Party - SFSymbolEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Third Party - SFSymbolEnum.swift"; sourceTree = "<group>"; };
 		DF353089272490220085584D /* StoredPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredPicture.swift; sourceTree = "<group>"; };
 		DF35308B272493A60085584D /* LoadedPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadedPicture.swift; sourceTree = "<group>"; };
 		DF38BF7B2680C249000ABC8F /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -84,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF1EE29D2989332100349247 /* SFSymbolEnum in Frameworks */,
 				DF1F33722988FC25004692B4 /* BrightnessToggle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,6 +106,7 @@
 				DF1A88C0297FA328008A187C /* Settings tab.swift */,
 				DF1A88BC297F730A008A187C /* Third Party Credits.swift */,
 				DF1A88B2297F5B85008A187C /* Third Party - BrightnessToggle.swift */,
+				DF1EE29E298935A600349247 /* Third Party - SFSymbolEnum.swift */,
 				DF1A88B6297F5BAC008A187C /* Third Party - UIBarButtonItem visibility.swift */,
 				DF1A88B4297F5B9E008A187C /* Third Party - UIView borders.swift */,
 			);
@@ -173,6 +178,7 @@
 			name = "Entry Card";
 			packageProductDependencies = (
 				DF1F33712988FC25004692B4 /* BrightnessToggle */,
+				DF1EE29C2989332100349247 /* SFSymbolEnum */,
 			);
 			productName = "Entry Card";
 			productReference = DFDD5162267D97A60037CD5E /* Entry Card.app */;
@@ -203,6 +209,7 @@
 			mainGroup = DFDD5159267D97A60037CD5E;
 			packageReferences = (
 				DF1F33702988FC25004692B4 /* XCRemoteSwiftPackageReference "BrightnessToggle" */,
+				DF1EE29B2989332100349247 /* XCRemoteSwiftPackageReference "SFSymbolEnum" */,
 			);
 			productRefGroup = DFDD5163267D97A60037CD5E /* Products */;
 			projectDirPath = "";
@@ -257,6 +264,7 @@
 				DF1A88BB297F5EAA008A187C /* About tab.swift in Sources */,
 				DFB8F9C02680841700D2AAFD /* SettingsViewController.swift in Sources */,
 				DF1A88C1297FA328008A187C /* Settings tab.swift in Sources */,
+				DF1EE29F298935A600349247 /* Third Party - SFSymbolEnum.swift in Sources */,
 				DF49F32326830A4200B7090A /* ImageViewWithPlaceholder.swift in Sources */,
 				DF38BF7C2680C249000ABC8F /* StorageManager.swift in Sources */,
 				DF1A88C72980BAC2008A187C /* Picture Picker.swift in Sources */,
@@ -467,6 +475,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		DF1EE29B2989332100349247 /* XCRemoteSwiftPackageReference "SFSymbolEnum" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jollyjinx/SFSymbolEnum";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		DF1F33702988FC25004692B4 /* XCRemoteSwiftPackageReference "BrightnessToggle" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/lardieri/BrightnessToggle";
@@ -478,6 +494,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DF1EE29C2989332100349247 /* SFSymbolEnum */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF1EE29B2989332100349247 /* XCRemoteSwiftPackageReference "SFSymbolEnum" */;
+			productName = SFSymbolEnum;
+		};
 		DF1F33712988FC25004692B4 /* BrightnessToggle */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DF1F33702988FC25004692B4 /* XCRemoteSwiftPackageReference "BrightnessToggle" */;
