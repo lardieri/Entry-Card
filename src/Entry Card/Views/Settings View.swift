@@ -1,12 +1,14 @@
 //
-//  Settings Host.swift
+//  Settings View.swift
 //  Entry Card
 //
 
 import SwiftUI
 import SFSymbolEnum
 
-struct SettingsHost: View {
+struct SettingsView: View {
+    @State var settings: Settings
+
     var body: some View {
         TabView {
             PicturesTab()
@@ -30,11 +32,13 @@ struct SettingsHost: View {
                 }
                 .tag(3)
         }
+        .environmentObject(settings)
     }
 }
 
-struct SettingsHost_Previews: PreviewProvider {
+struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsHost()
+        let settings = Settings()
+        SettingsView(settings: settings)
     }
 }

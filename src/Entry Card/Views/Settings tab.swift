@@ -22,19 +22,18 @@ fileprivate let appIcons: [Icon] = [
 ]
 
 struct SettingsTab: View {
-    @State private var useMaximumBrightness = false
-    @State private var requireUnlock = false
+    @EnvironmentObject var settings: Settings
     @State private var iconAssetName = appIcons.last!.assetName
 
     var body: some View {
         List {
             Section("Screen") {
-               Toggle("Use maximum brightness", isOn: $useMaximumBrightness)
+                Toggle("Use maximum brightness", isOn: $settings.useMaximumBrightness)
             }
             .listSectionSeparator(.hidden)
 
             Section("Privacy") {
-               Toggle("Require unlock", isOn: $requireUnlock)
+                Toggle("Require unlock", isOn: $settings.requireUnlock)
             }
             .listSectionSeparator(.hidden)
 
