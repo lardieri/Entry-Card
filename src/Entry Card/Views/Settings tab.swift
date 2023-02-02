@@ -8,22 +8,8 @@ import SwiftUI
 // From UIKit's readable layout guide. No official equivalent in SwiftUI.
 fileprivate let maxReadableWidth: CGFloat = 672.0
 
-fileprivate struct Icon: Identifiable {
-    let imageName: String
-    let assetName: String?
-    var id: String? { assetName }
-}
-
-fileprivate let appIcons: [Icon] = [
-    Icon(imageName: "Icon - default", assetName: nil),
-    Icon(imageName: "Icon - gray", assetName: "AppIcon-VelvetRopeGray"),
-    Icon(imageName: "Icon - vax", assetName: "AppIcon-VaxCard"),
-    Icon(imageName: "Icon - vip", assetName: "AppIcon-VIP"),
-]
-
 struct SettingsTab: View {
     @EnvironmentObject var settings: Settings
-    @State private var iconAssetName = appIcons.last!.assetName
 
     var body: some View {
         List {
@@ -38,9 +24,9 @@ struct SettingsTab: View {
             .listSectionSeparator(.hidden)
 
             Section("App icon") {
-                Picker(selection: $iconAssetName, label: EmptyView()) {
-                    ForEach(appIcons) { icon in
-                        Image(icon.imageName)
+                Picker(selection: $settings.alternateIconName, label: EmptyView()) {
+                    ForEach(Settings.availableIcons) { icon in
+                        Image(icon.displayImageName)
                             .aspectRatio(1.0, contentMode: .fit)
                     }
                 }
