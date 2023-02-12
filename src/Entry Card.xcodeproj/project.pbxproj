@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DF1A88B1297F507D008A187C /* Settings View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A88B0297F507D008A187C /* Settings View.swift */; };
+		DF1A88B1297F507D008A187C /* Settings root view.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A88B0297F507D008A187C /* Settings root view.swift */; };
 		DF1A88B3297F5B85008A187C /* Third Party - BrightnessToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A88B2297F5B85008A187C /* Third Party - BrightnessToggle.swift */; };
 		DF1A88B5297F5B9E008A187C /* Third Party - UIView borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A88B4297F5B9E008A187C /* Third Party - UIView borders.swift */; };
 		DF1A88B7297F5BAC008A187C /* Third Party - UIBarButtonItem visibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A88B6297F5BAC008A187C /* Third Party - UIBarButtonItem visibility.swift */; };
@@ -46,7 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DF1A88B0297F507D008A187C /* Settings View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings View.swift"; sourceTree = "<group>"; };
+		DF1A88B0297F507D008A187C /* Settings root view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings root view.swift"; sourceTree = "<group>"; };
 		DF1A88B2297F5B85008A187C /* Third Party - BrightnessToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Third Party - BrightnessToggle.swift"; sourceTree = "<group>"; };
 		DF1A88B4297F5B9E008A187C /* Third Party - UIView borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Third Party - UIView borders.swift"; sourceTree = "<group>"; };
 		DF1A88B6297F5BAC008A187C /* Third Party - UIBarButtonItem visibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Third Party - UIBarButtonItem visibility.swift"; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 				DF1A88C62980BAC2008A187C /* Picture Picker.swift */,
 				DF1A88C42980BA05008A187C /* Pictures tab.swift */,
 				DF1A88C0297FA328008A187C /* Settings tab.swift */,
-				DF1A88B0297F507D008A187C /* Settings View.swift */,
+				DF1A88B0297F507D008A187C /* Settings root view.swift */,
 				DF1A88BC297F730A008A187C /* Third Party Credits.swift */,
 				DF1A88B2297F5B85008A187C /* Third Party - BrightnessToggle.swift */,
 				DF1EE29E298935A600349247 /* Third Party - SFSymbolEnum.swift */,
@@ -255,7 +255,7 @@
 				DFDD516A267D97A60037CD5E /* MainViewController.swift in Sources */,
 				DF909F5B26B5D69100BB927C /* UIBarButtonItem visibility.swift in Sources */,
 				DF945D5527B2576C0019DABA /* ChildVCSwapper.swift in Sources */,
-				DF1A88B1297F507D008A187C /* Settings View.swift in Sources */,
+				DF1A88B1297F507D008A187C /* Settings root view.swift in Sources */,
 				DFDD517A267DC4F30037CD5E /* Storyboard identifiers.swift in Sources */,
 				DFB8F9BE26807AB800D2AAFD /* AppSettings.swift in Sources */,
 				DFB8F9BA267F298D00D2AAFD /* LoadedPictureView.swift in Sources */,

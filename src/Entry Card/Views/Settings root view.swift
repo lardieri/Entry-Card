@@ -1,12 +1,12 @@
 //
-//  Settings View.swift
+//  Settings root view.swift
 //  Entry Card
 //
 
 import SwiftUI
 import SFSymbolEnum
 
-struct SettingsView: View {
+struct SettingsRootView: View {
     @State var settings: Settings
 
     var body: some View {
@@ -36,9 +36,9 @@ struct SettingsView: View {
     }
 }
 
-struct SettingsView_Previews: PreviewProvider {
+struct SettingsRootView_Previews: PreviewProvider {
     static var previews: some View {
         let settings = Settings()
-        SettingsView(settings: settings)
+        SettingsRootView(settings: settings)
     }
 }

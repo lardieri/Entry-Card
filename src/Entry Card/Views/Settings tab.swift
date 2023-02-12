@@ -49,6 +49,8 @@ extension UISegmentedControl {
 
 struct SettingsTab_Previews: PreviewProvider {
     static var previews: some View {
+        let settings = Settings()
         SettingsTab()
+            .environmentObject(settings)
     }
 }
