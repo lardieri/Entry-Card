@@ -10,7 +10,8 @@ class SettingsHostingViewController: UIHostingController<SettingsRootView> {
 
     required init?(coder aDecoder: NSCoder) {
         let settings = Settings()
-        let rootView = SettingsRootView(settings: settings)
+        let pictures = Pictures()
+        let rootView = SettingsRootView(settings: settings, pictures: pictures)
 
         super.init(coder: aDecoder, rootView: rootView)
     }

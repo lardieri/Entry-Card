@@ -8,6 +8,7 @@ import SFSymbolEnum
 
 struct SettingsRootView: View {
     @State var settings: Settings
+    @State var pictures: Pictures
 
     var body: some View {
         TabView {
@@ -33,12 +34,14 @@ struct SettingsRootView: View {
                 .tag(3)
         }
         .environmentObject(settings)
+        .environmentObject(pictures)
     }
 }
 
 struct SettingsRootView_Previews: PreviewProvider {
     static var previews: some View {
         let settings = Settings()
-        SettingsRootView(settings: settings)
+        let pictures = Pictures()
+        SettingsRootView(settings: settings, pictures: pictures)
     }
 }

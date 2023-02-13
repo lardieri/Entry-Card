@@ -4,31 +4,38 @@
 //
 
 import SwiftUI
+import SFSymbolEnum
 
 struct PicturePicker: View {
-    @State var isEmpty: Bool = Bool.random()
+    @ObservedObject var picture: Picture
+
+    var isEmpty: Bool {
+        picture.image == nil
+    }
 
     struct RotateButton: View {
+        @EnvironmentObject var picture: Picture
+
         var body: some View {
             Button(
                 action: {
-
+                    picture.rotate()
                 },
 
                 label: {
-                    Image(systemName: .rotateLeft)
+                    Image(systemName: .rotateRight)
                 }
             )
         }
     }
 
     struct AddButton: View {
-        @Binding var isEmpty: Bool
+        @EnvironmentObject var picture: Picture
 
         var body: some View {
             Button(
                 action: {
-                    isEmpty = false
+                    picture.replace()
                 },
 
                 label: {
@@ -39,24 +46,38 @@ struct PicturePicker: View {
     }
 
     struct DeleteButton: View {
-        @Binding var isEmpty: Bool
+        @EnvironmentObject var picture: Picture
+        @State var presentingConfirmation = false
 
         var body: some View {
             Button(
                 action: {
-                    isEmpty = true
+                    presentingConfirmation = true
                 },
 
                 label: {
                     Image(systemName: .trash)
                 }
             )
+            .alert("Remove picture?", isPresented: $presentingConfirmation) {
+                Button(role: .destructive) {
+                    picture.clear()
+                } label: {
+                    Text("Remove")
+                }
+
+                Button(role: .cancel) {
+
+                } label: {
+                    Text("Cancel")
+                }
+            }
         }
     }
 
     var body: some View {
         ZStack(alignment: .bottom) {
-            Image(Images.emptyPicture)
+            Image(uiImage: picture.image ?? Self.placeholder)
                 .resizable()
                 .scaledToFit()
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
@@ -74,14 +95,15 @@ struct PicturePicker: View {
                     RotateButton()
                         .hidden(if: isEmpty)
 
-                    AddButton(isEmpty: $isEmpty)
+                    AddButton()
                         .hidden(if: !isEmpty)
 
-                    DeleteButton(isEmpty: $isEmpty)
+                    DeleteButton()
                         .hidden(if: isEmpty)
 
                     Spacer()
                 }
+                .environmentObject(picture)
 
                 Spacer(minLength: 8.0)
                     .fixedSize()
@@ -95,11 +117,14 @@ struct PicturePicker: View {
 
         }
     }
+
+    private static let placeholder = UIImage(named: Images.emptyPicture)!
 }
 
 struct PicturePicker_Previews: PreviewProvider {
     static var previews: some View {
-        PicturePicker()
+        let picture = Picture(index: 0, loadedPicture: nil)
+        PicturePicker(picture: picture)
     }
 }
 
