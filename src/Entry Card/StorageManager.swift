@@ -8,7 +8,7 @@ import PDFKit
 
 class StorageManager {
 
-    private static let maxPictures = 3
+    static let maxPictures = 9
     private static let jpegQuality: CGFloat = 0.8
     private static let jpegExtension = "jpg"
 
@@ -58,24 +58,28 @@ class StorageManager {
         return success
     }
 
-    static func addPicture(fromURL sourceUrl: URL, atPosition index: Int) -> Bool {
-        var success = false
+    static func addPicture(fromURL sourceURL: URL, atPosition index: Int) -> Bool {
+        guard let destinationURL = nextFileURL(withExtension: sourceURL.pathExtension) else { return false }
 
-        if let fileURL = nextFileURL(withExtension: sourceUrl.pathExtension) {
+        guard sourceURL.startAccessingSecurityScopedResource() else { return false }
+        defer { sourceURL.stopAccessingSecurityScopedResource() }
+
+        var coordinatorError: NSError? = nil
+        var copySucceeded: Bool = false
+        NSFileCoordinator().coordinate(readingItemAt: sourceURL, options: [], writingItemAt: destinationURL, options: [.forReplacing], error: &coordinatorError) { sourceURL, destinationURL in
             do {
-                try fileManager.copyItem(at: sourceUrl, to: fileURL)
-                addSavedFilename(fileURL.lastPathComponent, atPosition: index)
-                success = true
+                try fileManager.copyItem(at: sourceURL, to: destinationURL)
+                copySucceeded = true
             } catch {
-
-                // TEST TEST TEST
-                print ("File error!")
-                // TEST TEST TEST
-
+                print("File copy error: \(error)")
             }
         }
 
-        return success
+        guard copySucceeded else { return false }
+
+        addSavedFilename(destinationURL.lastPathComponent, atPosition: index)
+
+        return true
     }
 
     static func removePicture(fromPosition index: Int) {

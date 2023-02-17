@@ -93,9 +93,11 @@ struct PictureCell: View {
 
                 }
             })
-            .alert("File Picker goes here", isPresented: $presentingFilePicker, actions: {
-
+            .fileImporter(isPresented: $presentingFilePicker, allowedContentTypes: [ .heic, .jpeg, .png, .pdf ], onCompletion: { result in
+                guard case .success(let url) = result else { return }
+                let _ = StorageManager.addPicture(fromURL: url, atPosition: picture.id)
             })
+
         }
     }
 

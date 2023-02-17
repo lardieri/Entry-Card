@@ -28,10 +28,6 @@ class Picture: ObservableObject, Identifiable {
         StorageManager.removePicture(fromPosition: index)
     }
 
-    func replace() {
-
-    }
-
     private var loadedPicture: LoadedPicture? {
         didSet {
             image = loadedPicture?.rotatedImage()

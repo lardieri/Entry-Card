@@ -5,8 +5,6 @@
 
 import SwiftUI
 
-fileprivate let maxPictures = 3
-
 class Pictures: ObservableObject {
     @Published var collection: [Picture]
 
@@ -35,7 +33,7 @@ class Pictures: ObservableObject {
             Picture(index: index, loadedPicture: loadedPicture)
         }
 
-        while pictures.count < maxPictures {
+        while pictures.count < StorageManager.maxPictures {
             let picture = Picture(index: pictures.count, loadedPicture: nil)
             pictures.append(picture)
         }
