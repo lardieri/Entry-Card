@@ -17,7 +17,7 @@
 		DF1A88BF297FA05D008A187C /* SettingsHostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A88BE297FA05D008A187C /* SettingsHostingViewController.swift */; };
 		DF1A88C1297FA328008A187C /* Settings tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A88C0297FA328008A187C /* Settings tab.swift */; };
 		DF1A88C52980BA05008A187C /* Pictures tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A88C42980BA05008A187C /* Pictures tab.swift */; };
-		DF1A88C72980BAC2008A187C /* Picture Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A88C62980BAC2008A187C /* Picture Picker.swift */; };
+		DF1A88C72980BAC2008A187C /* Picture cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1A88C62980BAC2008A187C /* Picture cell.swift */; };
 		DF1EE29D2989332100349247 /* SFSymbolEnum in Frameworks */ = {isa = PBXBuildFile; productRef = DF1EE29C2989332100349247 /* SFSymbolEnum */; };
 		DF1EE29F298935A600349247 /* Third Party - SFSymbolEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1EE29E298935A600349247 /* Third Party - SFSymbolEnum.swift */; };
 		DF1EE2A8298A180000349247 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1EE2A7298A180000349247 /* Settings.swift */; };
@@ -38,6 +38,7 @@
 		DFB8F9BE26807AB800D2AAFD /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB8F9BD26807AB800D2AAFD /* AppSettings.swift */; };
 		DFB8F9C02680841700D2AAFD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB8F9BF2680841700D2AAFD /* SettingsViewController.swift */; };
 		DFB8F9C226808FB200D2AAFD /* UIView borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB8F9C126808FB200D2AAFD /* UIView borders.swift */; };
+		DFC0CCF4299F0A39004F3222 /* ImagePicker wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC0CCF3299F0A39004F3222 /* ImagePicker wrapper.swift */; };
 		DFDD5166267D97A60037CD5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDD5165267D97A60037CD5E /* AppDelegate.swift */; };
 		DFDD516A267D97A60037CD5E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDD5169267D97A60037CD5E /* MainViewController.swift */; };
 		DFDD516D267D97A60037CD5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFDD516B267D97A60037CD5E /* Main.storyboard */; };
@@ -58,7 +59,7 @@
 		DF1A88BE297FA05D008A187C /* SettingsHostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHostingViewController.swift; sourceTree = "<group>"; };
 		DF1A88C0297FA328008A187C /* Settings tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings tab.swift"; sourceTree = "<group>"; };
 		DF1A88C42980BA05008A187C /* Pictures tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pictures tab.swift"; sourceTree = "<group>"; };
-		DF1A88C62980BAC2008A187C /* Picture Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Picture Picker.swift"; sourceTree = "<group>"; };
+		DF1A88C62980BAC2008A187C /* Picture cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Picture cell.swift"; sourceTree = "<group>"; };
 		DF1EE29E298935A600349247 /* Third Party - SFSymbolEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Third Party - SFSymbolEnum.swift"; sourceTree = "<group>"; };
 		DF1EE2A7298A180000349247 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		DF25210B299A13F000791BA4 /* Pictures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pictures.swift; sourceTree = "<group>"; };
@@ -77,6 +78,7 @@
 		DFB8F9BD26807AB800D2AAFD /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		DFB8F9BF2680841700D2AAFD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DFB8F9C126808FB200D2AAFD /* UIView borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView borders.swift"; sourceTree = "<group>"; };
+		DFC0CCF3299F0A39004F3222 /* ImagePicker wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImagePicker wrapper.swift"; sourceTree = "<group>"; };
 		DFDD5162267D97A60037CD5E /* Entry Card.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Entry Card.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFDD5165267D97A60037CD5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFDD5169267D97A60037CD5E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -106,7 +108,8 @@
 			children = (
 				DF1A88B8297F5C2A008A187C /* About.swift */,
 				DF1A88BA297F5EAA008A187C /* About tab.swift */,
-				DF1A88C62980BAC2008A187C /* Picture Picker.swift */,
+				DFC0CCF3299F0A39004F3222 /* ImagePicker wrapper.swift */,
+				DF1A88C62980BAC2008A187C /* Picture cell.swift */,
 				DF1A88C42980BA05008A187C /* Pictures tab.swift */,
 				DF1A88C0297FA328008A187C /* Settings tab.swift */,
 				DF1A88B0297F507D008A187C /* Settings root view.swift */,
@@ -255,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFC0CCF4299F0A39004F3222 /* ImagePicker wrapper.swift in Sources */,
 				DF35308C272493A60085584D /* LoadedPicture.swift in Sources */,
 				DF1A88B7297F5BAC008A187C /* Third Party - UIBarButtonItem visibility.swift in Sources */,
 				DFB8F9BC267F29B100D2AAFD /* LoadedPictureViewController.swift in Sources */,
@@ -287,7 +291,7 @@
 				DF1EE29F298935A600349247 /* Third Party - SFSymbolEnum.swift in Sources */,
 				DF49F32326830A4200B7090A /* ImageViewWithPlaceholder.swift in Sources */,
 				DF38BF7C2680C249000ABC8F /* StorageManager.swift in Sources */,
-				DF1A88C72980BAC2008A187C /* Picture Picker.swift in Sources */,
+				DF1A88C72980BAC2008A187C /* Picture cell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

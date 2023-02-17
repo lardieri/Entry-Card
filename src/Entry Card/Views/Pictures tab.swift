@@ -19,7 +19,7 @@ struct PicturesTab: View {
 
             LazyVGrid(columns: columns, alignment: .center, spacing: spacing, pinnedViews: []) {
                 ForEach(pictures.collection) { picture in
-                    PicturePicker(picture: picture)
+                    PictureCell(picture: picture)
                 }
             }
             .padding(spacing)

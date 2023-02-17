@@ -57,14 +57,16 @@ class Settings: ObservableObject {
     }
 
     private func handleSettingsChangeNotification(notification: Notification) {
-        let useMaximumBrightness = AppSettings.useMaximumBrightness
-        if useMaximumBrightness != self.useMaximumBrightness {
-            self.useMaximumBrightness = useMaximumBrightness
-        }
+        OperationQueue.main.addOperation {
+            let useMaximumBrightness = AppSettings.useMaximumBrightness
+            if useMaximumBrightness != self.useMaximumBrightness {
+                self.useMaximumBrightness = useMaximumBrightness
+            }
 
-        let requireUnlock = AppSettings.requireUnlock
-        if requireUnlock != self.requireUnlock {
-            self.requireUnlock = requireUnlock
+            let requireUnlock = AppSettings.requireUnlock
+            if requireUnlock != self.requireUnlock {
+                self.requireUnlock = requireUnlock
+            }
         }
     }
 

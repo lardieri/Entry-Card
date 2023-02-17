@@ -25,7 +25,9 @@ class Pictures: ObservableObject {
     }
 
     private func handleSettingsChangeNotification(notification: Notification) {
-        collection = Self.buildCollection()
+        OperationQueue.main.addOperation {
+            self.collection = Self.buildCollection()
+        }
     }
 
     static private func buildCollection() -> [Picture] {
