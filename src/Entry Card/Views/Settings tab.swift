@@ -12,6 +12,23 @@ struct SettingsTab: View {
     @EnvironmentObject var settings: Settings
 
     var body: some View {
+        let requireUnlockButCheckBeforeEnabling = Binding<Bool>(
+            get: {
+                settings.requireUnlock
+            },
+            set: { userWantsToRequireUnlock in
+                if userWantsToRequireUnlock {
+                    LockManager.shared.requestUnlock { result in
+                        if result == .succeeded {
+                            settings.requireUnlock = true
+                        }
+                    }
+                } else {
+                    settings.requireUnlock = false
+                }
+            }
+        )
+
         List {
             Section("Screen") {
                 Toggle("Use maximum brightness", isOn: $settings.useMaximumBrightness)
@@ -19,7 +36,7 @@ struct SettingsTab: View {
             .listSectionSeparator(.hidden)
 
             Section("Privacy") {
-                Toggle("Require unlock", isOn: $settings.requireUnlock)
+                Toggle("Require unlock", isOn: requireUnlockButCheckBeforeEnabling)
             }
             .listSectionSeparator(.hidden)
 
