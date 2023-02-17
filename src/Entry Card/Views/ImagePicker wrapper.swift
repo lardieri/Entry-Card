@@ -43,9 +43,7 @@ struct ImagePicker: UIViewControllerRepresentable {
         }
 
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-            picker.presentingViewController?.dismiss(animated: true) {
-                self.completion(nil)
-            }
+            self.completion(nil)
         }
 
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -69,9 +67,7 @@ struct ImagePicker: UIViewControllerRepresentable {
                 result = .image(originalImage)
             }
 
-            picker.presentingViewController?.dismiss(animated: true) {
-                self.completion(result)
-            }
+            self.completion(result)
         }
 
         private let completion: Completion

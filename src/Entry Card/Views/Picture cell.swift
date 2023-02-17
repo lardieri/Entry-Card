@@ -90,13 +90,18 @@ struct PictureCell: View {
             }
             .sheet(item: $imageSourceType, content: { sourceType in
                 ImagePicker(sourceType: sourceType) { result in
-                    guard let result = result else { return }
+                    // UIImagePickerControllers must be explicitly dismissed.
+                    imageSourceType = nil
+
                     switch result {
                         case .image(let image):
                             picture.replace(with: image)
 
                         case .url(let url):
                             picture.replace(with: url)
+
+                        case .none:
+                            break
                     }
                 }
             })
