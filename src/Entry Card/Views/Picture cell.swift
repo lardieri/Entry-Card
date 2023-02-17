@@ -89,13 +89,24 @@ struct PictureCell: View {
                 }
             }
             .sheet(item: $imageSourceType, content: { sourceType in
-                ImagePicker(sourceType: sourceType, index: picture.id) { newImage in
+                ImagePicker(sourceType: sourceType) { result in
+                    guard let result = result else { return }
+                    switch result {
+                        case .image(let image):
+                            picture.replace(with: image)
 
+                        case .url(let url):
+                            picture.replace(with: url)
+                    }
                 }
             })
             .fileImporter(isPresented: $presentingFilePicker, allowedContentTypes: [ .heic, .jpeg, .png, .pdf ], onCompletion: { result in
                 guard case .success(let url) = result else { return }
-                let _ = StorageManager.addPicture(fromURL: url, atPosition: picture.id)
+
+                guard url.startAccessingSecurityScopedResource() else { return }
+                defer { url.stopAccessingSecurityScopedResource() }
+
+                picture.replace(with: url)
             })
 
         }

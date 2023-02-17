@@ -61,9 +61,6 @@ class StorageManager {
     static func addPicture(fromURL sourceURL: URL, atPosition index: Int) -> Bool {
         guard let destinationURL = nextFileURL(withExtension: sourceURL.pathExtension) else { return false }
 
-        guard sourceURL.startAccessingSecurityScopedResource() else { return false }
-        defer { sourceURL.stopAccessingSecurityScopedResource() }
-
         var coordinatorError: NSError? = nil
         var copySucceeded: Bool = false
         NSFileCoordinator().coordinate(readingItemAt: sourceURL, options: [], writingItemAt: destinationURL, options: [.forReplacing], error: &coordinatorError) { sourceURL, destinationURL in
