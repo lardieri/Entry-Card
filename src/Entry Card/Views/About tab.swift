@@ -5,8 +5,8 @@
 
 import SwiftUI
 
-// From UIKit's readable layout guide. No official equivalent in SwiftUI.
-fileprivate let maxReadableWidth: CGFloat = 672.0
+// For comparison, UIKit's readable layout guide is 672.0.
+fileprivate let maxReadableWidth: CGFloat = 500.0
 
 struct AboutTab: View {
     var body: some View {
@@ -18,6 +18,7 @@ struct AboutTab: View {
                     Spacer()
                 }
             }
+            .listRowSeparator(.hidden)
 
             Section {
                 DisclosureGroup(
@@ -31,8 +32,8 @@ struct AboutTab: View {
 
                     }
                 )
-                    .listRowSeparator(.hidden)
             }
+            .listRowSeparator(.hidden)
         }
         .listStyle(.inset)
         .frame(maxWidth: maxReadableWidth, alignment: .center)
