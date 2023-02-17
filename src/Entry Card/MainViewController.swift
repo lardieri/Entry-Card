@@ -38,10 +38,6 @@ class MainViewController: UIViewController, HasStoryboardID {
         }
     }
 
-    @IBAction func presentedViewControllerDismissed(unwindSegue: UIStoryboardSegue) {
-
-    }
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == Storyboard.pageViewControllerEmbeddedSegue) {
             pageVC = (segue.destination as! UIPageViewController)

@@ -14,7 +14,5 @@ enum Storyboard {
 
     static let pageViewControllerEmbeddedSegue = "Page View Controller embedded segue"
     static let presentSettingsSegue = "Present Settings segue"
-    static let dismissSettingsSegue = "Dismiss Settings segue"
-
 
 }
