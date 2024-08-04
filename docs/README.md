@@ -2,6 +2,8 @@
 
 An iOS app to show pictures of your entry/VIP card to the bouncer.
 
+[<img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1670457600" alt="Download on the App Store"/>](https://apps.apple.com/app/entry-card/id1573553753?itsct=apps_box_badge&amp;itscg=30200)
+
 ## What this app does
 
 Gets you in the door faster at your favorite restaurant, club, or gym!
